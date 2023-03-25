@@ -1,0 +1,29 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  height: 75px;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 100%; */
+  margin: 10px;
+}
+
+.header-right {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-icon {
+  color: white;
+}
+
+.header-icon:hover {
+  cursor: pointer;
+}
+
+.logo {
+  height: 75px;
+}
+
+
