@@ -6,8 +6,7 @@ const Landing = () => {
 
   return (
     <div>
-      {/* <img alt="StuffSwap logo" src={logo} /> */}
-      <Image alt="StuffSwap logo" src={logo} />
+      {/* <Image alt="StuffSwap logo" src={logo} /> */}
     </div>
   );
 };

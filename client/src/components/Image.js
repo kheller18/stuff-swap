@@ -7,6 +7,7 @@ const Image = (props) => {
     <img
       alt={props.alt}
       src={props.src}
+      className={props.className}
     />
   );
 };
