@@ -1,12 +1,14 @@
-import React from "react";
+import React from 'react';
 import Image from './Image';
 import logo from '../logos/stuff_swap.png';
 
-const Landing = () => {
+const Landing = props => {
 
   return (
-    <div>
-      {/* <Image alt="StuffSwap logo" src={logo} /> */}
+    <div className='landing-container'>
+      <div className='landing-header'>
+
+      </div>
     </div>
   );
 };

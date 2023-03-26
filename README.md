@@ -36,7 +36,7 @@
 ## 1. Installation
 
   If you would like to clone the repository, type `git clone https://github.com/kheller18/stuff-swap.git`.
-  In the terminal, with the conda dev environment activated, install the following packages and dependencies before running the NBA Machine Learning application. To understand how to install these, refer to the [Usage](#2-usage)
+  In the terminal, with the conda dev environment activated, install the following packages and dependencies before running the application. To understand how to install these, refer to the [Usage](#2-usage)
 
 
 ---
