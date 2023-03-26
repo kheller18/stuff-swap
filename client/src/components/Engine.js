@@ -1,11 +1,12 @@
 import React from 'react';
 import Landing from './Landing';
+import Main from './Main';
 
 const Engine = props => {
 
   return (
     <div className='engine-container'>
-      <Landing />
+      <Main />
     </div>
   );
 };

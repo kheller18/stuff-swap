@@ -1,0 +1,11 @@
+.header-item {
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.main-header {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
