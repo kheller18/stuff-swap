@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import Landing from './Landing';
 
-const Engine = () => {
+const Engine = props => {
 
   return (
     <div className='engine-container'>

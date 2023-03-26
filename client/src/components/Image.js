@@ -1,13 +1,13 @@
-import React from "react";
-import logo from '../logos/stuff_swap.png';
+import React from 'react';
 
-const Image = (props) => {
+const Image = props => {
 
   return (
     <img
       alt={props.alt}
       src={props.src}
       className={props.className}
+      id={props.id}
     />
   );
 };
