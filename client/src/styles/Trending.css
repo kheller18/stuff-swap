@@ -1,11 +1,17 @@
-.header-item {
+.category-header {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.category-item {
   color: white;
   font-weight: bold;
   margin: 10px;
   font-size: var(--header-font-size);
 }
 
-.header-item-active {
+.category-item-active {
   color: white;
   font-weight: bold;
   margin: 10px;
@@ -14,18 +20,12 @@
   font-size: var(--header-font-size);
 }
 
-.main-header {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-}
-
-.header-item:hover {
+.category-item:hover {
   color: var(--light-font-color);
   cursor: pointer;
 }
 
-.header-item-active:hover {
+.category-item-active:hover {
   color: var(--light-font-color);
   cursor: pointer;
 }

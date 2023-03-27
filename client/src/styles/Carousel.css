@@ -1,0 +1,15 @@
+.bagtag-logo {
+  border-radius: 5px;
+}
+
+.carousel-img {
+  margin: 15px;
+  height: 400px;
+  width: 400px;
+  transition: transform .2s;
+}
+
+.carousel-img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
