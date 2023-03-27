@@ -1,3 +1,15 @@
 .footer-container {
   display: flex;
+  color: white;
+}
+
+.footer-copyright {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-copyright-symbol {
+  padding-right: 5px;
 }

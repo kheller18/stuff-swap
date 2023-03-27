@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: #001140;
+  background-color: var(--background-color-primary);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -25,6 +25,7 @@ body {
 :root {
   height: 100vh;
   --background-color-primary: #001140;
+  --header-font-size: 18px;
 }
 
 /* .App-header {

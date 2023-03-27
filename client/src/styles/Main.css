@@ -2,6 +2,15 @@
   color: white;
   font-weight: bold;
   margin: 10px;
+  font-size: var(--header-font-size);
+}
+
+.header-item-active {
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+  border-bottom: 2px solid white;
+  font-size: var(--header-font-size);
 }
 
 .main-header {
