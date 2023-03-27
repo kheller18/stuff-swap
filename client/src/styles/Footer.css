@@ -1,6 +1,7 @@
 .footer-container {
   display: flex;
   color: white;
+  font-weight: bold;
 }
 
 .footer-copyright {

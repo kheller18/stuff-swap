@@ -26,6 +26,7 @@ body {
   height: 100vh;
   --background-color-primary: #001140;
   --header-font-size: 18px;
+  --light-font-color: #85bb65;
 }
 
 /* .App-header {

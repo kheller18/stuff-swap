@@ -9,6 +9,7 @@
   color: white;
   font-weight: bold;
   margin: 10px;
+  padding-bottom: 5px;
   border-bottom: 2px solid white;
   font-size: var(--header-font-size);
 }
@@ -17,4 +18,14 @@
   list-style-type: none;
   display: flex;
   flex-direction: row;
+}
+
+.header-item:hover {
+  color: var(--light-font-color);
+  cursor: pointer;
+}
+
+.header-item-active:hover {
+  color: var(--light-font-color);
+  cursor: pointer;
 }
