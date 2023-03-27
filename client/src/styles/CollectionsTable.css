@@ -1,3 +1,81 @@
-.collections-table {
+.collections-table-left {
   color: white;
+  /* justify-content: center; */
+  width: 800px;
+  border: 2px solid white;
+  /* border-left: 1px solid white;
+  border-bottom: 1px solid white; */
+  font-weight: bold;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-bottom: 10px;
+}
+
+.collections-table-right {
+  color: white;
+  /* justify-content: center; */
+  width: 800px;
+  border: 2px solid white;
+  font-weight: bold;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-bottom: 10px;
+
+}
+
+.collections-table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.collections-table-headers {
+  margin: 5px 0px 5px 0px;
+  /* border-bottom: 1px solid white; */
+  height: 50px;
+}
+
+.collection {
+  height: 50px;
+  /* border: 1px solid white; */
+  /* font-weight: bold; */
+}
+
+.collection-item {
+  /* height: 100px; */
+  /* display: flex; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.collection-item-floor-price {
+  /* display: flex; */
+  /* flex-direction: row; */
+  align-items: center;
+}
+
+.collection-item-volume {
+  /* display: flex; */
+  /* flex-direction: row; */
+  align-items: center;
+}
+
+.collection-image {
+  height: 75px;
+  border-radius: 5px;
+  margin-right: 10px;
+  /* margin: 0px 10px 0px 10px; */
+}
+
+#collection {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.collection:hover {
+  /* background-color: var(--light-font-color); */
+  background-color: white;
+  color: var(--light-font-color);
+  cursor: pointer;
 }
