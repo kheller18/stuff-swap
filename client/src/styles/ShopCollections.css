@@ -1,0 +1,97 @@
+.shop-collection-header {
+  background-image: url("../logos/bag_n_tag.png");
+  height: 400px;
+  margin-bottom: 110px;
+}
+
+.shop-collection-logo {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  padding-left: 100px;
+  /* display: flex;
+  justify-content: center; */
+  /* flex-direction: row;
+  align-items: center; */
+}
+
+.shop-collection-background-img {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 500px;
+}
+
+.collection-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.shop-collection-body {
+  color: white;
+  text-align: left;
+  padding-left: 100px;
+  /* display: flex; */
+}
+
+.collection-item-card {
+  border-radius: 5px;
+  margin: 10px;
+  width: 250px;
+  height: 350px;
+  background-color: white;
+  color: #001140;
+  overflow: hidden;
+}
+
+.shop-collection-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.collection-item-card-img {
+  width: 250px;
+  height: 250px;
+  /* width: 100%;
+  height: 100%; */
+  border-radius: 5px;
+  transition: .3s ease-in-out;
+  /* position: relative;
+  z-index: 1; */
+}
+
+.collection-item-card-img-container {
+  width: 250px;
+  height: 250px;
+  /* position: relative; */
+}
+
+.collection-item-card-img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.add-to-cart {
+  width: 100%;
+  height: 40px;
+  /* display: none; */
+  background-color: var(--light-font-color);
+  font-weight: bold;
+  color: white;
+}
+
+.card-details {
+  padding-left: 15px;
+}
+/* .collection-item-card:hover + .add-to-cart {
+  display: flex;
+} */
+
+.chain-symbol {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  /* position: relative;
+  z-index: 2; */
+}
