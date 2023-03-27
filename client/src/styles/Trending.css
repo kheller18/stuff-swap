@@ -1,0 +1,31 @@
+.category-header {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.category-item {
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+  font-size: var(--header-font-size);
+}
+
+.category-item-active {
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+  font-size: var(--header-font-size);
+}
+
+.category-item:hover {
+  color: var(--light-font-color);
+  cursor: pointer;
+}
+
+.category-item-active:hover {
+  color: var(--light-font-color);
+  cursor: pointer;
+}

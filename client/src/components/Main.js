@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Carousel from './Carousel';
 import '../styles/Main.css';
+import Trending from './Trending';
 
 
 const Main = props => {
   const [category, setCategory] = useState('All');
-  console.log(category)
+
   return (
     <div className='main-container'>
       <ul className='main-header'>
@@ -15,6 +16,7 @@ const Main = props => {
         <li value='Art' className={category === 'Art' ? 'header-item-active' : 'header-item'} onClick={(e) => setCategory("Art")}>Art</li>
       </ul>
       <Carousel />
+      <Trending />
     </div>
   );
 };
