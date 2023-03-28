@@ -7,8 +7,8 @@ const Engine = props => {
 
   return (
     <div className='engine-container'>
-      {/* <Main /> */}
-      <ShopCollections />
+      <Main />
+      {/* <ShopCollections /> */}
     </div>
   );
 };
