@@ -31,6 +31,8 @@ button:hover {
   --background-color-primary: #001140;
   --header-font-size: 18px;
   --light-font-color: #85bb65;
+  --logo-color-blue: #00adef;
+  --logo-color-turquoise: #5ce1e6;
 }
 
 /* .App-header {
