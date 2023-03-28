@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route  } from 'react-router-dom';
+import { BrowserRouter, Switch, Redirect, Route  } from 'react-router-dom';
 // import Engine from './components/Engine';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -15,6 +15,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Main} />
           <Route path='/collection' exact component={ShopCollections} />
+          <Redirect to='/' />
           {/* <Route path='/login' exact component={Engine} />
           <Route path='/signup' exact component={Engine} /> */}
         </Switch>
