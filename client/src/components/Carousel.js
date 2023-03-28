@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Image from './Image';
 import logo from '../logos/bag_n_tag.png';
 import '../styles/Carousel.css';
@@ -8,9 +8,8 @@ const Carousel = props => {
   const navigate = useNavigate();
 
   const handleClick = e => {
-    navigate('/collection');
-    // return <Redirect to='/collection' />;
-  }
+    navigate('/collection'); // handles redirect from click
+  };
 
   return (
     <div className='carousel-container'>

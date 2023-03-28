@@ -9,7 +9,7 @@ const CollectionsTable = props => {
   let navigate = useNavigate();
 
   const handleClick = e => {
-    navigate('/collection');
+    navigate('/collection'); // handles redirect from click
   };
 
   return (

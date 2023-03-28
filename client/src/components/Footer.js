@@ -14,7 +14,7 @@ const Footer = props => {
         <div className='footer-top-left'>
           <h1 className='footer-section-header'>Stay Connected</h1>
           <p className='footer-section-subheader'>Stay up to date by joining our mail list!</p>
-          <input className='email-input' placeholder='youremail@email.com' value={email} onChange={e => setEmail(e.target.value)} />
+          <input className='email-input' placeholder='youremail@domain.com' value={email} onChange={e => setEmail(e.target.value)} />
           <Button className='footer-signup-btn'>Sign up</Button>
         </div>
         <div className='footer-top-right'>
@@ -26,9 +26,7 @@ const Footer = props => {
           </div>
         </div>
       </div>
-      <div className='footer-bottom'>
-        
-      </div>
+      <div className='footer-bottom'></div>
       <div className='footer-copyright'>
         <FontAwesomeIcon className='footer-copyright-symbol' icon={faCopyright} />
         <p>StuffSwap 2023</p>
