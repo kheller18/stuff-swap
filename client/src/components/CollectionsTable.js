@@ -1,19 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Switch, Redirect, Route, useNavigate  } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 import Image from './Image';
 import logo from '../logos/bag_n_tag.png';
 import '../styles/CollectionsTable.css';
+import ShopCollections from './ShopCollections';
 
 const CollectionsTable = props => {
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
+
   const handleClick = e => {
-    console.log(e);
-    < Route exact path='/collection' />
-    // return Redirect('/collection');
-    // return <Redirect
-    //   to='/collection' exact
-    // />
-  }
+    navigate('/collection');
+  };
 
   return (
     <div className='collections-table-container'>
@@ -36,7 +33,7 @@ const CollectionsTable = props => {
             <td className='collection-item-floor-price'>0.10 ETH</td>
             <td className='collection-item-volume'>25 ETH</td>
           </tr>
-          <tr className='collection'>
+          <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>2</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
@@ -45,7 +42,7 @@ const CollectionsTable = props => {
             <td className='collection-item-floor-price'>0.10 ETH</td>
             <td className='collection-item-volume'>25 ETH</td>
           </tr>
-          <tr className='collection'>
+          <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>3</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
@@ -54,7 +51,7 @@ const CollectionsTable = props => {
             <td className='collection-item-floor-price'>0.10 ETH</td>
             <td className='collection-item-volume'>25 ETH</td>
           </tr>
-          <tr className='collection'>
+          <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>4</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
@@ -63,7 +60,7 @@ const CollectionsTable = props => {
             <td className='collection-item-floor-price'>0.10 ETH</td>
             <td className='collection-item-volume'>25 ETH</td>
           </tr>
-          <tr className='collection'>
+          <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>5</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
@@ -87,7 +84,7 @@ const CollectionsTable = props => {
           </tr>
         </thead>
         <tbody>
-          <tr className='collection'>
+        <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>6</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
@@ -96,7 +93,7 @@ const CollectionsTable = props => {
             <td className='collection-item-floor-price'>0.10 ETH</td>
             <td className='collection-item-volume'>25 ETH</td>
           </tr>
-          <tr className='collection'>
+          <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>7</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
@@ -105,7 +102,7 @@ const CollectionsTable = props => {
             <td className='collection-item-floor-price'>0.10 ETH</td>
             <td className='collection-item-volume'>25 ETH</td>
           </tr>
-          <tr className='collection'>
+          <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>8</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
@@ -114,7 +111,7 @@ const CollectionsTable = props => {
             <td className='collection-item-floor-price'>0.10 ETH</td>
             <td className='collection-item-volume'>25 ETH</td>
           </tr>
-          <tr className='collection'>
+          <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>9</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
@@ -123,7 +120,7 @@ const CollectionsTable = props => {
             <td className='collection-item-floor-price'>0.10 ETH</td>
             <td className='collection-item-volume'>25 ETH</td>
           </tr>
-          <tr className='collection'>
+          <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>10</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
