@@ -1,9 +1,19 @@
 import React from 'react';
+import { BrowserRouter, Switch, Redirect, Route, useNavigate  } from 'react-router-dom';
 import Image from './Image';
 import logo from '../logos/bag_n_tag.png';
 import '../styles/CollectionsTable.css';
 
 const CollectionsTable = props => {
+  // let navigate = useNavigate();
+  const handleClick = e => {
+    console.log(e);
+    < Route exact path='/collection' />
+    // return Redirect('/collection');
+    // return <Redirect
+    //   to='/collection' exact
+    // />
+  }
 
   return (
     <div className='collections-table-container'>
@@ -17,7 +27,7 @@ const CollectionsTable = props => {
           </tr>
         </thead>
         <tbody>
-          <tr className='collection'>
+          <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>1</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />

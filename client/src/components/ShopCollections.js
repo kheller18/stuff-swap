@@ -162,8 +162,6 @@ const ShopCollections = props => {
             </div>
             <Button className='add-to-cart'>Add to cart</Button>
           </div>
-
-
         </div>
       </div>
     </div>

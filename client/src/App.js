@@ -15,7 +15,7 @@ function App() {
         <Switch>
           <Route path='/' exact component={Main} />
           <Route path='/collection' exact component={ShopCollections} />
-          <Redirect to='/' />
+          {/* <Redirect to='/' /> */}
           {/* <Route path='/login' exact component={Engine} />
           <Route path='/signup' exact component={Engine} /> */}
         </Switch>
