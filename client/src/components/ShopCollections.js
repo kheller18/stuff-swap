@@ -27,7 +27,7 @@ const ShopCollections = props => {
           <p>Category Accessories</p>
         </div>
         <div className='collection-description'>
-          This colleciton is comprised of unique duffle bags.
+          Bag N Tag is a collection comprised of unique duffle bags.
         </div>
         <div className='shop-collection-items'>
           <div className='collection-item-card'>
@@ -36,38 +36,133 @@ const ShopCollections = props => {
               <Image className='collection-item-card-img' src={bagtag} />
             </div>
             <div className='card-details'>
-              <p className='card-detail'>Bag N Tag #1</p>
-              <p className='card-detail'>0.1 ETH</p>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
             </div>
             <Button className='add-to-cart'>Add to cart</Button>
           </div>
           <div className='collection-item-card'>
-            <Image className='collection-item-card-img' src={bagtag} />
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
           </div>
           <div className='collection-item-card'>
-            <Image className='collection-item-card-img' src={bagtag} />
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
           </div>
           <div className='collection-item-card'>
-            <Image className='collection-item-card-img' src={bagtag} />
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
           </div>
           <div className='collection-item-card'>
-            <Image className='collection-item-card-img' src={bagtag} />
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
           </div>
           <div className='collection-item-card'>
-            <Image className='collection-item-card-img' src={bagtag} />
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
           </div>
           <div className='collection-item-card'>
-            <Image className='collection-item-card-img' src={bagtag} />
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
           </div>
           <div className='collection-item-card'>
-            <Image className='collection-item-card-img' src={bagtag} />
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
           </div>
           <div className='collection-item-card'>
-            <Image className='collection-item-card-img' src={bagtag} />
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
           </div>
           <div className='collection-item-card'>
-            <Image className='collection-item-card-img' src={bagtag} />
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
           </div>
+          <div className='collection-item-card'>
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
+          </div>
+          <div className='collection-item-card'>
+            <div className='collection-item-card-img-container'>
+              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
+              <Image className='collection-item-card-img' src={bagtag} />
+            </div>
+            <div className='card-details'>
+              <div className='card-detail'>Bag N Tag #1</div>
+              <div className='card-detail'>0.1 ETH</div>
+            </div>
+            <Button className='add-to-cart'>Add to cart</Button>
+          </div>
+
 
         </div>
       </div>

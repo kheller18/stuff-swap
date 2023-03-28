@@ -6,6 +6,8 @@
   align-items: center;
   /* width: 100%; */
   padding: 10px 30px 10px 20px;
+  /* top: 0;
+  position: sticky; */
 }
 
 .header-right {
