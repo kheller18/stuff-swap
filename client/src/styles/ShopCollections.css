@@ -13,6 +13,7 @@
   width: 200px;
   border-radius: 5px;
   margin-left: 100px;
+  background-color: lightgrey;
   /* margin-bottom: 30px; */
   /* display: flex;
   justify-content: center; */
@@ -33,7 +34,7 @@
   font-weight: bold;
 }
 
-.shop-collection-body {
+.shop-collection-subheader {
   color: white;
   text-align: left;
   padding-left: 100px;
@@ -89,6 +90,10 @@
   border: none;
 }
 
+.add-to-cart:hover {
+  opacity: .9;
+}
+
 .card-details {
   padding-left: 15px;
   color: var(--background-color-primary);
@@ -112,4 +117,8 @@
   position: absolute;
   z-index: 2;
   color: lightgrey;
+}
+
+.filter-items {
+  list-style-type: none;
 }
