@@ -18,7 +18,6 @@ const Cart = props => {
           <FontAwesomeIcon className='close-cart' icon={faXmark} />
         </div>
       </div>
-
       <div className='cart-body'>
         <div className='cart-body-header'>
           <div className='cart-body-header-left'>
@@ -40,17 +39,12 @@ const Cart = props => {
               </div>
               <div className='cart-item-price'>0.20 ETH</div>
             </div>
-
           </div>
         </div>
       </div>
       <div className='cart-footer'>
-        <div>
-          Total price
-        </div>
-        <div>
-          0.20 ETH
-        </div>
+        <div>Total price</div>
+        <div>0.20 ETH</div>
       </div>
       <Button className='purchase-btn'>Complete Purchase</Button>
     </div>
