@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import './App.css';
 import ShopCollections from './components/ShopCollections';
 import Main from './components/Main';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <div className='App'>
         <Header />
         <Routes>
-          <Route path='/' exact element={<Main />} />
+          <Route path='/' exact element={<Cart />} />
           <Route path='/collection' element={<ShopCollections />} />
           {/* <Route path='*' element={<Main />} /> */}
           {/* <Redirect to='/' /> */}
