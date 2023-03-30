@@ -27,7 +27,7 @@ button:hover {
 }
 
 :root {
-  height: 100vh;
+  /* height: 100vh; */
   --background-color-primary: #001140;
   --header-font-size: 18px;
   --light-font-color: #85bb65;
