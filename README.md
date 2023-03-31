@@ -9,7 +9,7 @@ We created a mock online marketplace for [NFTs (non-fungible tokens)](https://en
 
 The website will have features such as a user registration and login system, a search bar to filter NFTs by their properties, and a shopping cart where users can store NFTs for purchase. Additionally, the website will have an admin panel where the owner of the NFT collection can manage the NFTs available for sale and view sales reports.
 
-The project will involve building the front-end of the website using [JavaScript](https://www.javascript.com/), as well as integrating a back-end framework using [Solidity](https://soliditylang.org/). A database will be created using [Pinata](https://www.pinata.cloud/) to store user and NFT collection information. Lastly, integration with a cryptocurrency payment system such as [Coinbase](https://www.coinbase.com/) will be required to process payments for NFT purchases.
+The project will involve building the front-end of the website using [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics), [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics), and [JavaScript](https://www.javascript.com/), as well as integrating a back-end framework using [Solidity](https://soliditylang.org/). A database will be created using [Pinata](https://www.pinata.cloud/) to store user and NFT collection information. Lastly, integration with a cryptocurrency payment system such as [MetaMask](https://metamask.io/download/) will be required to process payments for NFT purchases.
 
 ---
 
