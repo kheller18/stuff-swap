@@ -2,10 +2,18 @@
 pragma solidity ^0.5.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC721/ERC721Full.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/ownership/Ownable.sol";
 
-contract BagNTagToken is ERC721Full {
-    constructor() public ERC721Full("BagNTagToken", "BNT") { }
-
+contract BagNTagToken is ERC721Full, Ownable {
+    constructor(
+        string memory _name,
+        string memory _symbol,
+        string memory _artistName,
+        string memory _initBaseURI
+    ) ERC721(_name, _symbol) {
+        setBaseURI(_initBaseURI);
+    
+    }
     //With this function, we allow users to register new pieces of artwork
 
     function registerArtwork(address owner, string memory tokenURI)
