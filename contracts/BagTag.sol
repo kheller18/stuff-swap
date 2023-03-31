@@ -1,5 +1,5 @@
 //Build a dApp Back-End Contract
-pragma solidity ^0.5.0;
+pragma solidity ^0.8.18;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC721/ERC721Full.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/ownership/Ownable.sol";
@@ -18,6 +18,7 @@ contract BagNTagToken is ERC721Full, Ownable, ERC721Royalty, ERC721Burnable {
     uint256 public cost = ;
     uint256 public maxSupply = ;
     uint256 public maxMintAmount = 2;
+    
 
     //A pause modifier or condition can temporarily remove a function's ability to work, 
     //w/o impacting other contract functions and without opting to destroy the entire contract and start from scratch
