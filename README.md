@@ -5,21 +5,18 @@
 ---
 
 ## Description
+We created a mock online marketplace for [NFTs (non-fungible tokens)](https://en.wikipedia.org/wiki/Non-fungible_token). We also created a mock NFT collection. The website will allow users to browse and purchase NFTs from the collection using cryptocurrency, such as Ethereum, as a payment method.
 
+The website will have features such as a user registration and login system, a search bar to filter NFTs by their properties, and a shopping cart where users can store NFTs for purchase. Additionally, the website will have an admin panel where the owner of the NFT collection can manage the NFTs available for sale and view sales reports.
 
----
-
-## Dictionary of Terms Used in this Repository
-
+The project will involve building the front-end of the website using [JavaScript](https://www.javascript.com/), as well as integrating a back-end framework using [Solidity](https://soliditylang.org/). A database will be created using [Pinata](https://www.pinata.cloud/) to store user and NFT collection information. Lastly, integration with a cryptocurrency payment system such as [Coinbase](https://www.coinbase.com/) will be required to process payments for NFT purchases.
 
 ---
 
 ## Table of Contents
 
-- [StuffSwap](#stuffswap)
+  - [StuffSwap](#stuffswap)
   - [Description](#description)
-  - [Dictionary of Terms Used in this Repository](#dictionary-of-terms-used-in-this-repository)
-  - [Table of Contents](#table-of-contents)
   - [1. Installation](#1-installation)
   - [2. Usage](#2-usage)
   - [3. License](#3-license)
@@ -30,13 +27,10 @@
 
 ---
 
-
----
-
 ## 1. Installation
 
   If you would like to clone the repository, type `git clone https://github.com/kheller18/stuff-swap.git`.
-  In the terminal, with the conda dev environment activated, install the following packages and dependencies before running the application. To understand how to install these, refer to the [Usage](#2-usage)
+  In the terminal, with the conda dev environment activated, install the following packages and dependencies before running the application. To understand how to install these, refer to the [Usage](#2-usage).
 
 
 ---
