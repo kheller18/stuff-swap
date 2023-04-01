@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWallet, faCartShopping, faUser } from  '@fortawesome/free-solid-svg-icons';
+// import Web3EthContract from 'web3-eth-contract';
+// import Web3 from 'web3';
 
 const Header = props => {
   const navigate = useNavigate();
@@ -18,6 +20,14 @@ const Header = props => {
     props.cartStatus ? props.setCartStatus(false) : props.setCartStatus(true);
   };
 
+  const handleWalletClick = async () => {
+    navigate('/user/wallet')
+  };
+
+  const handleUserClick = async () => {
+    props.userStatus ? props.setUserStatus(false) : props.setUserStatus(true);
+  };
+
   return (
     <div className='header-container'>
       <div className='header-left'>
@@ -25,9 +35,9 @@ const Header = props => {
         {/* <div>StuffSwap</div> */}
       </div>
       <div className="header-right">
-        <FontAwesomeIcon className='header-icon' id='user-icon' icon={faUser} />
+        <FontAwesomeIcon className='header-icon' id='user-icon' icon={faUser} onClick={handleUserClick} />
         <FontAwesomeIcon className='header-icon' id='cart-icon' icon={faCartShopping} onClick={handleClick}/>
-        <FontAwesomeIcon className='header-icon' id='wallet-icon' icon={faWallet} />
+        <FontAwesomeIcon className='header-icon' id='wallet-icon' icon={faWallet} onClick={handleWalletClick} />
       </div>
     </div>
   );
