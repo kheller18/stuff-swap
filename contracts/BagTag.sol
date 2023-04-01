@@ -15,10 +15,11 @@ contract BagNTagToken is ERC721Full, Ownable, ERC721Royalty, ERC721Burnable {
 
     string public baseURI;
     string public baseExtension = ".json";
-    uint256 public cost = ;
-    uint256 public maxSupply = ;
-    uint256 public maxMintAmount = 2;
-    
+    uint256 public cost = 1000000000000000000 wei;
+    uint256 public maxSupply = 2000;
+    uint256 public maxMintAmount = 5;
+    // mapping(uint => address[]) public nftOwners;
+    // mapping(uint => uint) public nftPrices
 
     //A pause modifier or condition can temporarily remove a function's ability to work, 
     //w/o impacting other contract functions and without opting to destroy the entire contract and start from scratch
@@ -33,6 +34,17 @@ contract BagNTagToken is ERC721Full, Ownable, ERC721Royalty, ERC721Burnable {
         setBaseURI(_initBaseURI);
     
     }
+
+    // A mint function with two parameters: 1. _to(The address where the newly minted tokens will be transferred), 2. _mintAmount(Amount of tokens to be minted)
+    // Four require statements to ensure certain conditions: 1. contract is not paused, 2. _mintAmount is greater than 0, 3. _mintAmount is <= maxMintAmount,
+    // 4. the total supply of tokens after the minting process will not exceed the maximum supply of tokens that can be created
+    function mint(address _to, uint256 _mintAmount) public payable {
+        uint265 supply = totalSupply;
+        require(!paused);
+        require(_mintAmount > 0);
+        require(_mintAmount <= maxMintAmount);
+        require(supply + _mintAmount <= maxSupply);
+    } 
     
     function name() external view returns (string memory) {
         return _name;
