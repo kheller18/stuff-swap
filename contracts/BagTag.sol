@@ -1,31 +1,31 @@
 //Build a dApp Back-End Contract
-pragma solidity ^0.8.18;
+pragma solidity ^0.8.0;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC721/ERC721Full.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/ownership/Ownable.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721Royalty.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721Burnable.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Royalty.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Metadata.sol";
 
-contract BagNTagToken is ERC721Full, Ownable, ERC721Royalty, ERC721Burnable {
+
+contract BagNTagToken is ERC721Enumerable, Ownable, ERC721Royalty, Counters, ERC721Metadata {
+  
+    using Strings for uint256;
     using Counters for Counters.Counter;
-    
-    //This helps to ensure that each token has a unique ID that can be used to identify it on the blockchain.
     Counters.Counter private _tokenIdTracker;
-    
     //these variables are marked as private to prevent external contracts or users from modifying or accessing them directly.
-    string private _baseURI;
-    string private _baseExtension = ".json";
-    uint256 private _cost = 1000000000000000000 wei;
-    uint256 private _maxSupply = 2000;
-    uint256 private _maxMintAmount = 5;
+    string private baseURI;
+    string private baseExtension = ".json";
+    uint256 private cost = 1000000000000000000 wei;
+    uint256 private maxSupply = 2000;
+    uint256 private maxMintAmount = 5;
     
     //A pause modifier or condition can temporarily remove a function's ability to work, 
     //without impacting other contract functions and without opting to destroy the entire contract and start from scratch
-    bool private _paused = false;
+    //bool private paused = false;
 
-    // mapping(uint => address[]) public nftOwners;
-    // mapping(uint => uint) public nftPrices
+    mapping(uint => address[]) public nftOwners;
+    mapping(uint => uint) public nftPrices;
 
     
     constructor(
@@ -33,30 +33,35 @@ contract BagNTagToken is ERC721Full, Ownable, ERC721Royalty, ERC721Burnable {
         string memory _symbol,
         string memory _artistName,
         string memory _initBaseURI
-    ) ERC721(_name, _symbol) 
+
+    ) ERC721("BagNTagToken", "BNT") 
     {
         setBaseURI(_initBaseURI);
     
     }
         
-   
+    // internal
+  function _baseURI() internal view virtual override returns (string memory) {
+    return baseURI;
+  }
     // A mint function with two parameters: 1. _to(The address where the newly minted tokens will be transferred), 2. _mintAmount(Amount of tokens to be minted)
     // Four require statements to ensure certain conditions: 1. contract is not paused, 2. _mintAmount is greater than 0, 3. _mintAmount is <= maxMintAmount,
     // 4. the total supply of tokens after the minting process will not exceed the maximum supply of tokens that can be created
     function mint(address _to, uint256 _mintAmount) public payable {
         uint256 supply = totalSupply();
         require(!paused(), "Contract is paused");
-        require(mintAmount > 0 && mintAmount <= _maxMintAmount, "Invalid mint amount");
-        require(supply + mintAmount <= _maxSupply, "Max supply reached");
+        require(_mintAmount > 0, "Invalid mint amount");
+        require(_mintAmount <= maxMintAmount, "Invalid mint amount");
+        require(supply + _mintAmount <= maxSupply, "Max supply reached");
 
+
+  
         // The for loop is used to iterate over a range of values, from 0 to mintAmount-1,
         //where mintAmount is a parameter passed into the function that specifies how many tokens should be minted.
 
-         for (uint256 i = 0; i < mintAmount; i++) {
-            _tokenIdTracker.increment();
-            uint256 tokenId = _tokenIdTracker.current();
-            _safeMint(to, tokenId);
-        }
+             for (uint256 i = 1; i <= _mintAmount; i++) {
+                _safeMint(_to, supply + i);
+            }
     }
 
 //defines function 'setBaseURI' allows the owner of the smart contract to update the base URI for the metadata of the NFTs in the contract, 
@@ -108,8 +113,11 @@ contract BagNTagToken is ERC721Full, Ownable, ERC721Royalty, ERC721Burnable {
         _safeMint(owner, tokenId);
 
         //sets the metadata URI for the new token using the '_setTokenURI' function provided by the ERC-721 token standard.
-        _setTokenURI(tokenId, tokenURI);
 
+    function _setTokenURI(uint256 tokenId, string memory tokenURI) internal virtual {
+        require(_exists(tokenId), "ERC721Metadata: URI set of nonexistent token");
+        _tokenURIs[tokenId] = tokenURI;
+    }
         //returns the tokenId value to the caller, indicating the unique identifier of the new token that was just registered.
         return tokenId;
     
@@ -120,17 +128,17 @@ contract BagNTagToken is ERC721Full, Ownable, ERC721Royalty, ERC721Burnable {
   //of '_paused' without needing to have direct access to the internal state of the contract.
         
      function paused() public view returns (bool) {
-        return _paused;
+        return paused;
     }
 
 //The purpose of this function is to allow the contract owner 'onlyOwner' to temporarily 
 //pause certain operations or prevent malicious attacks by setting the value of _paused to true.
     function pause() public onlyOwner {
-        _paused = true;
+        paused = true;
     }
 
 //The purpose of this function is to allow the contract owner to resume normal operations after the contract has been paused
     function unpause() public onlyOwner {
-        _paused = false;
+        paused = false;
     }
 }
