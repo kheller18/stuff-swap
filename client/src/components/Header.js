@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from './Image';
 // import logo from '../logos/stuff_swap_current.png';
 import logo from '../logos/logo_no_text.png';
@@ -6,13 +6,15 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWallet, faCartShopping, faUser } from  '@fortawesome/free-solid-svg-icons';
-// import Web3EthContract from 'web3-eth-contract';
-// import Web3 from 'web3';
 import Web3EthContract from 'web3-eth-contract';
 import Web3 from 'web3';
-
+import Cart from './Cart';
+import UserDropdown from './UserDropdown';
 
 const Header = props => {
+  const [showCart, setShowCart] = useState(false);
+  // const [showWallet, setShowWallet] = useState(false);
+  const [showUser, setShowUser] = useState(false);
   const navigate = useNavigate();
 
   const handleNavigateClick = () => {
@@ -20,7 +22,7 @@ const Header = props => {
   };
 
   const handleClick = () => {
-    props.cartStatus ? props.setCartStatus(false) : props.setCartStatus(true);
+    showCart ? setShowCart(false) : setShowCart(true);
   };
 
   const handleWalletClick = async () => {
@@ -41,8 +43,8 @@ const Header = props => {
 
   };
 
-  const handleUserClick = async () => {
-    props.userStatus ? props.setUserStatus(false) : props.setUserStatus(true);
+  const handleUserClick = () => {
+    showUser ? setShowUser(false) : setShowUser(true);
   };
 
   return (
@@ -56,12 +58,14 @@ const Header = props => {
         <FontAwesomeIcon className='header-icon' id='cart-icon' icon={faCartShopping} onClick={handleClick}/>
         <FontAwesomeIcon className='header-icon' id='wallet-icon' icon={faWallet} onClick={handleWalletClick} />
       </div>
-
-      {/* <div className="header-right">
-        <FontAwesomeIcon className='header-icon' id='user-icon' icon={faUser} onClick={handleUserClick} />
-        <FontAwesomeIcon className='header-icon' id='cart-icon' icon={faCartShopping} onClick={handleClick}/>
-        <FontAwesomeIcon className='header-icon' id='wallet-icon' icon={faWallet} onClick={handleWalletClick} />
-      </div> */}
+      {showUser ?
+        <UserDropdown showUser={showUser} setShowUser={setShowUser} />
+      : null
+      }
+      {showCart ?
+        <Cart showCart={showCart} setCartStatus={setShowCart} />
+      : null
+      }
     </div>
   );
 };

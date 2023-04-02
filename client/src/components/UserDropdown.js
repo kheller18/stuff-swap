@@ -8,6 +8,8 @@ const UserDropdown = props => {
   const navigate = useNavigate();
 
   const handleClick = (e) => {
+    props.setShowUser(false);
+
     switch(e.target.id) {
       case 'my-artwork':
         navigate('/user/artwork/owned');
