@@ -112,7 +112,8 @@ contract BagNTagToken is ERC721Enumerable, Ownable, ERC721Royalty, Counters, ERC
         //assigns it to the 'owner' account using the '_safeMint' function provided by the ERC-721 token standard.
         _safeMint(owner, tokenId);
 
-        //sets the metadata URI for the new token using the '_setTokenURI' function provided by the ERC-721 token standard.
+        //sets the metadata URI for the new token using the '_setTokenURI' function provided by the ERC-721Metadata token standard.
+
 
     function _setTokenURI(uint256 tokenId, string memory tokenURI) internal virtual {
         require(_exists(tokenId), "ERC721Metadata: URI set of nonexistent token");
@@ -122,7 +123,9 @@ contract BagNTagToken is ERC721Enumerable, Ownable, ERC721Royalty, Counters, ERC
         return tokenId;
     
     }
-  
+
+
+
   //The purpose of this function is to allow external applications or contracts to check whether the contract is currently paused or not.
   //By making this function 'public', external applications or contracts can access the current value 
   //of '_paused' without needing to have direct access to the internal state of the contract.
