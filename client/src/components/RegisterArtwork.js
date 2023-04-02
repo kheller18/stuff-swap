@@ -12,7 +12,6 @@ const RegisterArtwork = props => {
     file: ''
   });
 
-  console.log(collectionObj)
   return (
     <div className='register-artwork-container'>
       <div className='register-artwork-form'>
@@ -39,7 +38,6 @@ const RegisterArtwork = props => {
         <div className='register-artwork-form-footer'>
           <Button className='register-artwork-button'>Register Artwork</Button>
         </div>
-
       </div>
     </div>
   );

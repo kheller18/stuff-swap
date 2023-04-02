@@ -3,10 +3,11 @@
   top: 53px;
   right: 37px;
   margin-bottom: auto;
-  width: 210px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content:left;
+  z-index: 169;
 }
 
 .user-dropdown-items {
