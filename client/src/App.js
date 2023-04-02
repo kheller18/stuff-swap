@@ -10,10 +10,13 @@ import Cart from './components/Cart';
 import UserDropdown from './components/UserDropdown';
 import RegisterArtwork from './components/RegisterArtwork';
 import Wallet from './components/Wallet';
+import OwnedArtwork from './components/OwnedArtwork';
+import SellArtwork from './components/SellArtwork';
+import UpdateArtwork from './components/UpdateArtwork';
 
 function App() {
   const [showCart, setShowCart] = useState(false);
-  const [showWallet, setShowWallet] = useState(false);
+  // const [showWallet, setShowWallet] = useState(false);
   const [showUser, setShowUser] = useState(false);
 
   return (
@@ -23,11 +26,12 @@ function App() {
         <Routes>
           <Route path='/' exact element={<Main />} />
           <Route path='/collection' element={<ShopCollections />} />
-          <Route path='/collection/register' element={<RegisterArtwork />} />
-          <Route path='/user/collections' element={<RegisterArtwork />} />
-          <Route path='/collection/update' element={<RegisterArtwork />} />
+          <Route path='/user/artwork/register' element={<RegisterArtwork />} />
+          <Route path='/user/artwork/update' element={<UpdateArtwork />} />
           <Route path='/user/settings' element={<RegisterArtwork />} />
           <Route path='/user/wallet' element={<Wallet />} />
+          <Route path='/user/artwork/owned' element={<OwnedArtwork />} />
+          <Route path='/user/artwork/sell' element={<SellArtwork />} />
 
           {/* <Route path='*' element={<Main />} /> */}
           {/* <Redirect to='/' /> */}
