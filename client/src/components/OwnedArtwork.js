@@ -21,7 +21,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -30,7 +30,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -39,7 +39,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -48,7 +48,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -57,7 +57,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -66,7 +66,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -75,7 +75,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -84,7 +84,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -93,7 +93,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -102,7 +102,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -111,7 +111,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>
@@ -120,7 +120,7 @@ const OwnedArtwork = props => {
             <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
             <Image className='owned-artwork-item-card-img' src={bagtag} />
           </div>
-          <div className='card-details'>
+          <div className='owned-card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
           </div>
         </div>

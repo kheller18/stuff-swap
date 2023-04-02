@@ -106,7 +106,7 @@
   opacity: .9;
 }
 
-.card-details {
+.owned-card-details {
   padding-left: 15px;
   color: var(--background-color-primary);
   background-color: lightgrey;
