@@ -23,6 +23,12 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
           <Button className='sell-art-btn'>List Item</Button>
         </div>
@@ -33,7 +39,14 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
+          <Button className='sell-art-btn'>List Item</Button>
         </div>
         <div className='sell-artwork-item-card'>
           <div className='sell-artwork-item-card-img-container'>
@@ -42,7 +55,14 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
+          <Button className='sell-art-btn'>List Item</Button>
         </div>
         <div className='sell-artwork-item-card'>
           <div className='sell-artwork-item-card-img-container'>
@@ -51,7 +71,14 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
+          <Button className='sell-art-btn'>List Item</Button>
         </div>
         <div className='sell-artwork-item-card'>
           <div className='sell-artwork-item-card-img-container'>
@@ -60,7 +87,14 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
+          <Button className='sell-art-btn'>List Item</Button>
         </div>
         <div className='sell-artwork-item-card'>
           <div className='sell-artwork-item-card-img-container'>
@@ -69,7 +103,14 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
+          <Button className='sell-art-btn'>List Item</Button>
         </div>
         <div className='sell-artwork-item-card'>
           <div className='sell-artwork-item-card-img-container'>
@@ -78,7 +119,14 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
+          <Button className='sell-art-btn'>List Item</Button>
         </div>
         <div className='sell-artwork-item-card'>
           <div className='sell-artwork-item-card-img-container'>
@@ -87,7 +135,14 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
+          <Button className='sell-art-btn'>List Item</Button>
         </div>
         <div className='sell-artwork-item-card'>
           <div className='sell-artwork-item-card-img-container'>
@@ -96,7 +151,14 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
+          <Button className='sell-art-btn'>List Item</Button>
         </div>
         <div className='sell-artwork-item-card'>
           <div className='sell-artwork-item-card-img-container'>
@@ -105,26 +167,16 @@ const SellArtwork = props => {
           </div>
           <div className='card-details'>
             <div className='card-detail'>Bag N Tag #1</div>
+            <div className='card-detail'>Purchase Price: 0.2 ETH</div>
+            <div className='card-detail'>
+              <label className='list-price-label'>List Price:</label>
+              <input className='list-price-input' />
+              <div className='list-price-currency'>USD</div>
+            </div>
           </div>
+          <Button className='sell-art-btn'>List Item</Button>
         </div>
-        <div className='sell-artwork-item-card'>
-          <div className='sell-artwork-item-card-img-container'>
-            <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
-            <Image className='sell-artwork-item-card-img' src={bagtag} />
-          </div>
-          <div className='card-details'>
-            <div className='card-detail'>Bag N Tag #1</div>
-          </div>
-        </div>
-        <div className='sell-artwork-item-card'>
-          <div className='sell-artwork-item-card-img-container'>
-            <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
-            <Image className='sell-artwork-item-card-img' src={bagtag} />
-          </div>
-          <div className='card-details'>
-            <div className='card-detail'>Bag N Tag #1</div>
-          </div>
-        </div>
+
       </div>
     </div>
   );
