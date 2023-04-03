@@ -3,7 +3,7 @@ import Image from './Image';
 import logo from '../logos/stuff_swap.png';
 import '../styles/RegisterArtwork.css';
 import Button from './Button';
-import { pinFilePinata } from '../utils/API';
+import { pinFilePinata } from '../utils/pinataAPI';
 
 const RegisterArtwork = props => {
   const [collectionObj, setCollectionObj] = useState({
