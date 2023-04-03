@@ -1,3 +1,5 @@
+//SPDX-License-Identifier: MIT
+
 //Build a dApp Back-End Contract
 pragma solidity ^0.8.0;
 
@@ -22,7 +24,7 @@ contract BagNTagToken is ERC721Enumerable, Ownable, ERC721Royalty, Counters, ERC
 
   //A pause modifier or condition can temporarily remove a function's ability to work, 
   //without impacting other contract functions and without opting to destroy the entire contract and start from scratch
-  //bool private paused = false;
+  bool private paused = false;
 
   mapping(uint => address[]) public nftOwners;
   mapping(uint => uint) public nftPrices;
@@ -34,7 +36,7 @@ contract BagNTagToken is ERC721Enumerable, Ownable, ERC721Royalty, Counters, ERC
       string memory _artistName,
       string memory _initBaseURI
 
-  ) ERC721("BagNTagToken", "BNT")
+  ) ERC721(_name, _symbol)
   {
     setBaseURI(_initBaseURI);
   }
@@ -49,7 +51,7 @@ contract BagNTagToken is ERC721Enumerable, Ownable, ERC721Royalty, Counters, ERC
   // 4. the total supply of tokens after the minting process will not exceed the maximum supply of tokens that can be created
   function mint(address _to, uint256 _mintAmount) public payable {
     uint256 supply = totalSupply();
-    require(!paused(), "Contract is paused");
+    require(!paused, "Contract is paused");
     require(_mintAmount > 0, "Invalid mint amount");
     require(_mintAmount <= maxMintAmount, "Invalid mint amount");
     require(supply + _mintAmount <= maxSupply, "Max supply reached");
@@ -67,10 +69,10 @@ contract BagNTagToken is ERC721Enumerable, Ownable, ERC721Royalty, Counters, ERC
     _baseURI = uri;
   }
 
-  //the _baseURI function is a crucial component of any ERC-721 smart contract, 
+  //the _baseURI function is a crucial component of any ERC-721 smart contract,
   //as it enables external applications and tools to access and display the metadata for individual tokens.
   function _baseURI() internal view virtual override returns (string memory) {
-      return _baseURI;
+    return _baseURI;
   }
 
   // defining our contracts 'name' allows external applications or tools to retrieve the name of the smart contract, 
@@ -89,7 +91,7 @@ contract BagNTagToken is ERC721Enumerable, Ownable, ERC721Royalty, Counters, ERC
     return super.totalSupply();
   }
 
-  //The function takes two arguments: 'address' named 'owner' that represents the address of the account that will own the new token, 
+  //The function takes two arguments: 'address' named 'owner' that represents the address of the account that will own the new token,
   //and a string named tokenURI that represents the metadata URI for the new token.
   function registerArtwork(address owner, string memory tokenURI) public returns (uint256) {
 
@@ -114,13 +116,13 @@ contract BagNTagToken is ERC721Enumerable, Ownable, ERC721Royalty, Counters, ERC
   }
 
   //The purpose of this function is to allow external applications or contracts to check whether the contract is currently paused or not.
-  //By making this function 'public', external applications or contracts can access the current value 
+  //By making this function 'public', external applications or contracts can access the current value
   //of '_paused' without needing to have direct access to the internal state of the contract.
   function paused() public view returns (bool) {
     return paused;
   }
 
-  //The purpose of this function is to allow the contract owner 'onlyOwner' to temporarily 
+  //The purpose of this function is to allow the contract owner 'onlyOwner' to temporarily
   //pause certain operations or prevent malicious attacks by setting the value of _paused to true.
   function pause() public onlyOwner {
     paused = true;
