@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from './Image';
 import logo from '../logos/stuff_swap.png';
 import '../styles/RegisterArtwork.css';
 import Button from './Button';
-import { pinFilePinata } from '../utils/pinataAPI';
+import { pinArtwork } from '../utils/web3API';
 
 const RegisterArtwork = props => {
   const [collectionObj, setCollectionObj] = useState({
     name: '',
     artist: '',
+    address: props.wallet,
     price: '',
     file: ''
   });
 
   const handleSubmit = () => {
-    pinFilePinata(collectionObj);
-  }
+    pinArtwork(collectionObj);
+    // pinFilePinata(collectionObj);
+  };
+
+  useEffect(() => {
+    setCollectionObj({...collectionObj, address: props.wallet});
+  }, [props.wallet])
 
   return (
     <div className='register-artwork-container'>
@@ -24,6 +30,10 @@ const RegisterArtwork = props => {
           <h1 className='register-form-title'>Register New Artwork</h1>
         </div>
         <div className='register-artwork-form-body'>
+          <div className='artwork-form-section'>
+            <label className='artwork-label' id='artwork-artist-address-label' htmlFor='address'>Select your account</label>
+            <input className='artwork-input' id='artwork-artist-address-input' name='address' value={collectionObj['address']} onChange={(e) => setCollectionObj({...collectionObj, 'address': e.target.value})} />
+          </div>
           <div className='artwork-form-section'>
             <label className='artwork-label' id='artwork-name-label' htmlFor='name'>Enter the name of the artwork</label>
             <input className='artwork-input' id='artwork-name-input' name='name' value={collectionObj['name']} onChange={(e) => setCollectionObj({...collectionObj, 'name': e.target.value})} />

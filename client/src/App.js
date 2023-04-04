@@ -13,21 +13,23 @@ import SellArtwork from './components/SellArtwork';
 import UpdateArtwork from './components/UpdateArtwork';
 
 function App() {
+  const [walletAddress, setWalletAddress] = useState('');
+  console.log(walletAddress);
 
   return (
     <Router>
       <div className='App'>
         {/* <Header userStatus={showUser} setUserStatus={setShowUser} cartStatus={showCart} setCartStatus={setShowCart} /> */}
-        <Header />
+        <Header wallet={walletAddress} setWalletAddress={setWalletAddress} />
         <Routes>
-          <Route path='/' exact element={<Main />} />
-          <Route path='/collection' element={<ShopCollections />} />
-          <Route path='/user/artwork/register' element={<RegisterArtwork />} />
-          <Route path='/user/artwork/update' element={<UpdateArtwork />} />
-          <Route path='/user/settings' element={<RegisterArtwork />} />
-          <Route path='/user/wallet' element={<Wallet />} />
-          <Route path='/user/artwork/owned' element={<OwnedArtwork />} />
-          <Route path='/user/artwork/sell' element={<SellArtwork />} />
+          <Route path='/' exact element={<Main wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
+          <Route path='/collection' element={<ShopCollections wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
+          <Route path='/user/artwork/register' element={<RegisterArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
+          <Route path='/user/artwork/update' element={<UpdateArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
+          <Route path='/user/settings' element={<RegisterArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
+          <Route path='/user/wallet' element={<Wallet wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
+          <Route path='/user/artwork/owned' element={<OwnedArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
+          <Route path='/user/artwork/sell' element={<SellArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
         </Routes>
         <Footer />
       </div>
