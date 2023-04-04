@@ -11,10 +11,10 @@ contract BagNTagToken is ERC721, Ownable {
     
     uint256 public constant MAX_TOKENS = 2000;
     uint256 private constant TOKEN_RESERVED = 5;
-    uint256 public price = 1000000000000000000;
+    uint256 public price = 10000000000000000;
     uint256 public constant MAX_MINT_PER_TX = 5;
 
-    bool public isSaleActive;
+    bool public isSaleActive = true;
     uint256 public totalSupply;
     mapping(address => uint256) private mintedPerWallet;
 
