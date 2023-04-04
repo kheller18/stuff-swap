@@ -45,6 +45,33 @@ export const pinFilePinata = async (info) => {
       },
   });
     console.log(res.data);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const updatePinPinata = async (item) => {
+  const data = JSON.stringify({
+    "ipfsPinHash": item.ipfsPinHash,
+    "name": item.name,
+    "keyvalues": {
+      "price": item.price
+    }
+  });
+
+  try {
+    const res = await axios({
+      method: "put",
+      url: 'https://api.pinata.cloud/pinning/hashMetadata',
+      headers: {
+          'pinata_api_key': `${process.env.REACT_APP_PINATA_API_KEY}`,
+          'pinata_secret_api_key': `${process.env.REACT_APP_PINATA_API_SECRET}`,
+          "Content-Type": "application/json"
+      },
+      data: data
+    });
+    console.log(res.data);
   } catch (error) {
     console.log(error);
   }
