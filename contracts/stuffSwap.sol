@@ -3,11 +3,11 @@ pragma solidity ^0.8.7;
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC721/ERC721Full.sol";
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
 
-// import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 // import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-// import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+
 
 
 contract ArtRegistry is ERC721Enumerable, Ownable {
@@ -49,6 +49,15 @@ contract ArtRegistry is ERC721Enumerable, Ownable {
         for (uint256 i = 1; i <= _mintAmount; i++) {
             _safeMint(_to, supply + i);
         }
+    }
+
+     // Function to transfer ownership of an NFT
+    function transferNFT(address _from, address _to, uint256 _tokenId) external {
+        require(ownerOf(_tokenId) == _from, "NFT not owned by sender");
+        require(_to != address(0), "Invalid recipient address");
+        require(ownerOf(_tokenId) == msg.sender || isApprovedForAll(_from, msg.sender), "Not authorized");
+
+        _transfer(_from, _to, _tokenId);
     }
 
     function registerArtwork(
