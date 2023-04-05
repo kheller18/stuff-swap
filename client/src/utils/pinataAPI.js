@@ -17,6 +17,9 @@ let fileHeaders = {
   "pinata_api_key": `${process.env.REACT_APP_PINATA_API_KEY}`,
   "pinata_secret_api_key": `${process.env.REACT_APP_PINATA_API_SECRET}`,
 }
+const loadContract = async () => {
+
+}
 
 export const pinFilePinata = async (info) => {
   const formData = new FormData();

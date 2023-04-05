@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from './Image';
 // import logo from '../logos/stuff_swap_current.png';
 import logo from '../logos/logo_no_text.png';
@@ -10,6 +10,7 @@ import Web3EthContract from 'web3-eth-contract';
 import Web3 from 'web3';
 import Cart from './Cart';
 import UserDropdown from './UserDropdown';
+import { getUserAddress } from '../utils/web3API';
 
 const Header = props => {
   const [showCart, setShowCart] = useState(false);
@@ -26,20 +27,24 @@ const Header = props => {
   };
 
   const handleWalletClick = async () => {
-    // navigate('/user/wallet')
-    const { ethereum } = window;
-    const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
-    if (metamaskIsInstalled) {
-      Web3EthContract.setProvider(ethereum);
-      let web3 = new Web3(ethereum);
-      try {
-        const accounts =  await ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      } catch (err) {
-        // dispatch(connectFailed("Something went wrong."));
-      }
-    }
+
+    // navigate('/user/wallet');
+    const address = await getUserAddress();
+    props.setWalletAddress(address);
+    console.log(address);
+    // const { ethereum } = window;
+    // const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
+    // if (metamaskIsInstalled) {
+    //   Web3EthContract.setProvider(ethereum);
+    //   let web3 = new Web3(ethereum);
+    //   try {
+    //     const accounts =  await ethereum.request({
+    //     method: "eth_requestAccounts",
+    //   });
+    //   } catch (err) {
+    //     // dispatch(connectFailed("Something went wrong."));
+    //   }
+    // }
 
   };
 

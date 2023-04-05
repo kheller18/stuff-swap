@@ -6,19 +6,25 @@ import Web3 from 'web3';
 
 const Wallet = props => {
   useEffect(() => {
-    const { ethereum } = window;
-    const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
-    if (metamaskIsInstalled) {
-      Web3EthContract.setProvider(ethereum);
-      let web3 = new Web3(ethereum);
-      try {
-        const accounts =  ethereum.request({
-          method: "eth_requestAccounts",
-        });
-      } catch (err) {
-        // dispatch(connectFailed("Something went wrong."));
+    const fetchWallet = async () => {
+      const { ethereum } = window;
+      const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
+      if (metamaskIsInstalled) {
+        Web3EthContract.setProvider(ethereum);
+        let web3 = new Web3(ethereum);
+        try {
+          const accounts =  await ethereum.request({
+            method: "eth_requestAccounts",
+          });
+          console.log(accounts);
+        } catch (err) {
+          // dispatch(connectFailed("Something went wrong."));
+        }
       }
     }
+    
+    fetchWallet();
+
   }, []);
 
   return (
