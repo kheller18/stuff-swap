@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Redirect, Route  } from 'react-router-dom';
 // import Engine from './components/Engine';
 import Header from './components/Header';
@@ -14,7 +14,7 @@ import UpdateArtwork from './components/UpdateArtwork';
 
 function App() {
   const [walletAddress, setWalletAddress] = useState('');
-  console.log(walletAddress);
+  // console.log(walletAddress);
 
   return (
     <Router>

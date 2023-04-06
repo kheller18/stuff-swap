@@ -23,7 +23,7 @@ const Main = props => {
         console.log(err)
       }
       const artwork = await getSiteFilesPinata(accounts[0]);
-      setSiteContent(artwork);
+      setSiteContent(artwork.rows);
     }
     getSiteArtwork();
 
@@ -37,8 +37,13 @@ const Main = props => {
         <li value='Apparel' className={category === 'Apparel' ? 'header-item-active' : 'header-item'} onClick={(e) => setCategory("Apparel")}>Apparel</li>
         <li value='Art' className={category === 'Art' ? 'header-item-active' : 'header-item'} onClick={(e) => setCategory("Art")}>Art</li>
       </ul>
-      <Carousel content={siteContent} />
-      <Trending content={siteContent} />
+      {siteContent.length > 0 ?
+        <div>
+          <Carousel content={siteContent} />
+          <Trending content={siteContent} />
+        </div>
+      : ''
+      }
     </div>
   );
 };
