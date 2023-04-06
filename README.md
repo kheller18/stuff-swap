@@ -31,18 +31,16 @@ The project will involve building the front-end of the website using [HTML](http
 
   If you would like to clone the repository, type `git clone https://github.com/kheller18/stuff-swap.git`.
   In the terminal, with the conda dev environment activated, install the following packages and dependencies before running the application. To understand how to install these, refer to the [Usage](#2-usage).
+  - MetaMask
 
 
 ---
 
 ## 2. Usage
 
-  After cloning the repository locally, you'll need to have the packages listed in [Installation](#1-installation) installed on your machine. To do so, you'll need to activate your conda dev environment and running the following commands:
+  After cloning the repository locally, you'll need to have the packages listed in [Installation](#1-installation) installed on your machine. To do so, you'll need to navigate to your web browser and follow this link https://metamask.io/ , you will then hit the download button. 
 
-      ```
-      ```
-
-  After all of these are installed, please refer to the [Deployment](#6-deployment) section for instructions on how to view or edit the notebook.
+  After this is installed, please refer to the [Deployment](#6-deployment) section for instructions on how to view or edit the notebook.
 
 ---
 
