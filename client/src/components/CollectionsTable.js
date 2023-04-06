@@ -24,6 +24,19 @@ const CollectionsTable = props => {
           </tr>
         </thead>
         <tbody>
+          {props.content.map((art, index) => {
+            return (
+              <tr onClick={e => handleClick(e)} className='collection'>
+                <td className='collection-rank'>{index + 1}</td>
+                <td className='collection-item'>
+                  <Image className='collection-image' src={`https://ipfs.io/ipfs/${art.ipfs_pin_hash}`} />
+                  <p className='collection-name'>{art.metadata.name}</p>
+                </td>
+                <td className='collection-item-floor-price'>{art.metadata.keyvalues.price} ETH</td>
+                <td className='collection-item-volume'>25 ETH</td>
+              </tr>
+            )
+          })}
           <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>1</td>
             <td className='collection-item'>
@@ -44,24 +57,6 @@ const CollectionsTable = props => {
           </tr>
           <tr onClick={e => handleClick(e)} className='collection'>
             <td className='collection-rank'>3</td>
-            <td className='collection-item'>
-              <Image className='collection-image' src={logo} />
-              <p className='collection-name'>Bag N Tag</p>
-            </td>
-            <td className='collection-item-floor-price'>0.10 ETH</td>
-            <td className='collection-item-volume'>25 ETH</td>
-          </tr>
-          <tr onClick={e => handleClick(e)} className='collection'>
-            <td className='collection-rank'>4</td>
-            <td className='collection-item'>
-              <Image className='collection-image' src={logo} />
-              <p className='collection-name'>Bag N Tag</p>
-            </td>
-            <td className='collection-item-floor-price'>0.10 ETH</td>
-            <td className='collection-item-volume'>25 ETH</td>
-          </tr>
-          <tr onClick={e => handleClick(e)} className='collection'>
-            <td className='collection-rank'>5</td>
             <td className='collection-item'>
               <Image className='collection-image' src={logo} />
               <p className='collection-name'>Bag N Tag</p>

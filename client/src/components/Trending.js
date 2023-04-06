@@ -13,7 +13,7 @@ const Trending = props => {
         <li value='Trending' className={category === 'Trending' ? 'category-item-active' : 'category-item'} onClick={(e) => setCategory("Trending")}>Trending</li>
         <li value='Hot' className={category === 'Hot' ? 'category-item-active' : 'category-item'} onClick={(e) => setCategory("Hot")}>Hot</li>
       </ul>
-      <CollectionsTable />
+      <CollectionsTable content={props.content} />
     </div>
   );
 };
