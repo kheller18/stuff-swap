@@ -75,19 +75,25 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_to",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
 			},
 			{
-				"internalType": "uint256",
-				"name": "_mintAmount",
-				"type": "uint256"
+				"internalType": "address payable",
+				"name": "sender",
+				"type": "address"
 			}
 		],
-		"name": "mint",
-		"outputs": [],
-		"stateMutability": "payable",
+		"name": "buyArtwork",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -103,12 +109,12 @@
 				"type": "uint256"
 			},
 			{
-				"internalType": "string",
-				"name": "reportURI",
-				"type": "string"
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
 			}
 		],
-		"name": "newAppraisal",
+		"name": "listArtwork",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -368,6 +374,11 @@
 				"internalType": "string",
 				"name": "ipfs",
 				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "selling",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
