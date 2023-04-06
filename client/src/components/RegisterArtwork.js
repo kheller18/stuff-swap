@@ -14,8 +14,8 @@ const RegisterArtwork = props => {
     file: ''
   });
 
-  const handleSubmit = () => {
-    pinArtwork(collectionObj);
+  const handleSubmit = async () => {
+    await pinArtwork(collectionObj);
     // pinFilePinata(collectionObj);
   };
 
