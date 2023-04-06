@@ -27,7 +27,7 @@ function App() {
           <Route path='/user/artwork/register' element={<RegisterArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
           <Route path='/user/artwork/update' element={<UpdateArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
           <Route path='/user/settings' element={<RegisterArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
-          <Route path='/user/wallet' element={<Wallet wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
+          {/* <Route path='/user/wallet' element={<Wallet wallet={walletAddress} setWalletAddress={setWalletAddress} />} /> */}
           <Route path='/user/artwork/owned' element={<OwnedArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
           <Route path='/user/artwork/sell' element={<SellArtwork wallet={walletAddress} setWalletAddress={setWalletAddress} />} />
         </Routes>
