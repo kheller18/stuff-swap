@@ -17,22 +17,77 @@ let fileHeaders = {
   "pinata_api_key": `${process.env.REACT_APP_PINATA_API_KEY}`,
   "pinata_secret_api_key": `${process.env.REACT_APP_PINATA_API_SECRET}`,
 }
-const loadContract = async () => {
+// const loadContract = async () => {
 
+// }
+
+export const getUserFilesPinata = async (address) => {
+  console.log(address)
+  try {
+    const res = await axios({
+      method: "get",
+      url: `https://api.pinata.cloud/data/pinList?includeCount=false`,
+      headers: {
+          'pinata_api_key': `${process.env.REACT_APP_PINATA_API_KEY}`,
+          'pinata_secret_api_key': `${process.env.REACT_APP_PINATA_API_SECRET}`,
+      },
+      params: {
+        status: 'pinned',
+        'metadata': {
+          keyvalues: {'address': {"value": address, 'op': 'eq'}}
+        }
+      }
+  });
+    // console.log(res);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-export const pinFilePinata = async (info) => {
-  const formData = new FormData();
-  const metadata = JSON.stringify({
-    name: info.name,
-    artist: info.artist,
-    price: info.price
+export const getSiteFilesPinata = async (address) => {
+  try {
+    const res = await axios({
+      method: "get",
+      url: `https://api.pinata.cloud/data/pinList?status=pinned?includeCount=false`,
+      headers: {
+          'pinata_api_key': `${process.env.REACT_APP_PINATA_API_KEY}`,
+          'pinata_secret_api_key': `${process.env.REACT_APP_PINATA_API_SECRET}`,
+      },
+      params: {
+        status: 'pinned',
+        'metadata': {
+          keyvalues: {
+            'address': {"value": address, 'op': 'ne'},
+            'selling': {"value": true, 'op': 'eq'}
+          }
+        }
+      }
   });
+    // console.log(res);
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const pinFilePinata = async (item) => {
+  let formData = new FormData();
+  const metadata = JSON.stringify({
+    name: item.name,
+    'keyvalues': {
+      artist: item.artist,
+      price: item.price,
+      address: item.address,
+      selling: 'true'
+    }
+  });
+
   const options = JSON.stringify({
     cidVersion: 0,
   })
 
-  formData.append('file', info.file);
+  formData.append('file', item.file);
   formData.append('pinataMetadata', metadata);
   formData.append('pinataOptions', options);
 
@@ -46,7 +101,7 @@ export const pinFilePinata = async (info) => {
           'pinata_secret_api_key': `${process.env.REACT_APP_PINATA_API_SECRET}`,
           "Content-Type": "multipart/form-data"
       },
-  });
+    });
     console.log(res.data);
     return res.data;
   } catch (error) {
@@ -59,7 +114,10 @@ export const updatePinPinata = async (item) => {
     "ipfsPinHash": item.ipfsPinHash,
     "name": item.name,
     "keyvalues": {
-      "price": item.price
+      artist: item.artist,
+      price: item.price,
+      address: item.address,
+      selling: 'true'
     }
   });
 
@@ -79,10 +137,3 @@ export const updatePinPinata = async (item) => {
     console.log(error);
   }
 }
-
-// function to pin JSON to ipfs
-export const pinJSONPinata = () => {
-
-}
-
-
