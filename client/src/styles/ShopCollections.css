@@ -2,6 +2,7 @@
   background-image: url("../logos/bag_n_tag.png");
   height: 400px;
   margin-bottom: 100px;
+  /* margin-left: 60px; */
 }
 
 .shop-collection-container {
@@ -14,11 +15,6 @@
   border-radius: 5px;
   margin-left: 100px;
   background-color: lightgrey;
-  /* margin-bottom: 30px; */
-  /* display: flex;
-  justify-content: center; */
-  /* flex-direction: row;
-  align-items: center; */
 }
 
 .shop-collection-background-img {
@@ -38,7 +34,6 @@
   color: white;
   text-align: left;
   padding-left: 100px;
-  /* display: flex; */
 }
 
 .collection-item-card {
@@ -60,8 +55,6 @@
 .collection-item-card-img {
   width: 250px;
   height: 250px;
-  /* width: 100%;
-  height: 100%; */
   border-radius: 5px;
   transition: .3s ease-in-out;
   position: relative;
@@ -72,7 +65,6 @@
   width: 250px;
   height: 250px;
   overflow: hidden;
-  /* position: absolute; */
 }
 
 .collection-item-card-img:hover {
@@ -83,7 +75,6 @@
 .add-to-cart {
   width: 100%;
   height: 40px;
-  /* display: none; */
   background-color: var(--light-font-color);
   font-weight: bold;
   color: white;
@@ -106,9 +97,6 @@
 .card-detail {
   margin: 2px;
 }
-/* .collection-item-card:hover + .add-to-cart {
-  display: flex;
-} */
 
 .chain-symbol {
   height: 30px;
@@ -121,4 +109,9 @@
 
 .filter-items {
   list-style-type: none;
+}
+
+.collection-item {
+  display: flex;
+  flex-direction: column;
 }

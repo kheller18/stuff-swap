@@ -6,6 +6,7 @@ import { faDiscord, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-
 import Button from './Button';
 
 const Footer = props => {
+  // state controlled field for email submittal
   const [email, setEmail] = useState('');
 
   return (

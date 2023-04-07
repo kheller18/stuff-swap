@@ -1,9 +1,8 @@
 import React from 'react';
-import { useNavigate, Link  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Image from './Image';
 import logo from '../logos/bag_n_tag.png';
 import '../styles/CollectionsTable.css';
-import ShopCollections from './ShopCollections';
 
 const CollectionsTable = props => {
   let navigate = useNavigate();
@@ -66,9 +65,6 @@ const CollectionsTable = props => {
           </tr>
         </tbody>
       </table>
-
-
-
       <table className='collections-table-right'>
         <thead className='collections-table-headers'>
           <tr>
@@ -126,7 +122,6 @@ const CollectionsTable = props => {
           </tr>
         </tbody>
       </table>
-
     </div>
   );
 };

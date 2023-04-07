@@ -1,13 +1,14 @@
 import React from 'react';
-import { useNavigate, Link  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Image from './Image';
 import logo from '../logos/bag_n_tag.png';
 import '../styles/CollectionsTable.css';
-import ShopCollections from './ShopCollections';
 
 const ArtTable = props => {
+  // initializes object for redirecting to different routes
   let navigate = useNavigate();
 
+  // navigates to different url based on the art requested
   const handleClick = (e, art) => {
     navigate('/artwork/item', {state: art}); // handles redirect from click
   };
@@ -37,38 +38,8 @@ const ArtTable = props => {
               </tr>
             )
           })}
-          <tr onClick={e => handleClick(e)} className='collection'>
-            <td className='collection-rank'>1</td>
-            <td className='collection-item'>
-              <Image className='collection-image' src={logo} />
-              <p className='collection-name'>Bag N Tag</p>
-            </td>
-            <td className='collection-item-floor-price'>0.10 ETH</td>
-            <td className='collection-item-volume'>25 ETH</td>
-          </tr>
-          <tr onClick={e => handleClick(e)} className='collection'>
-            <td className='collection-rank'>2</td>
-            <td className='collection-item'>
-              <Image className='collection-image' src={logo} />
-              <p className='collection-name'>Bag N Tag</p>
-            </td>
-            <td className='collection-item-floor-price'>0.10 ETH</td>
-            <td className='collection-item-volume'>25 ETH</td>
-          </tr>
-          <tr onClick={e => handleClick(e)} className='collection'>
-            <td className='collection-rank'>3</td>
-            <td className='collection-item'>
-              <Image className='collection-image' src={logo} />
-              <p className='collection-name'>Bag N Tag</p>
-            </td>
-            <td className='collection-item-floor-price'>0.10 ETH</td>
-            <td className='collection-item-volume'>25 ETH</td>
-          </tr>
         </tbody>
       </table>
-
-
-
       <table className='collections-table-right'>
         <thead className='collections-table-headers'>
           <tr>
@@ -126,7 +97,6 @@ const ArtTable = props => {
           </tr>
         </tbody>
       </table>
-
     </div>
   );
 };

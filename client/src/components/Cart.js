@@ -10,15 +10,18 @@ import { transferArtwork } from '../utils/web3API';
 
 const Cart = props => {
   const [cartTotal, setCartTotal] = useState('0');
-  console.log(props.content)
+
+  // sets whether to show cart or not
   const handleCartStatus = () => {
     props.setCartStatus(false);
   };
 
+  // handles clearing the cart when "clear all" is clicked
   const handleClick = () => {
     props.setContent([]);
   }
 
+  // function to call web3 API when user wants to purchase and NFT
   const handlePurchase = async () => {
     await transferArtwork(props.content[0], props.walletAddress);
     props.setContent([]);
@@ -52,7 +55,7 @@ const Cart = props => {
                   <div className='cart-body-item'>
                     <div className='cart-body-item-details'>
                       <div className='cart-body-image'>
-                        <Image className='cart-image' alt='' src={logo} />
+                        <Image className='cart-image' alt='' src={`https://ipfs.io/ipfs/${item.ipfs_pin_hash}`} />
                       </div>
                       <div className='cart-item-contents'>
                         <p className='cart-item-name'>{item.metadata.name}</p>
@@ -70,20 +73,17 @@ const Cart = props => {
             </div>
           </div>
           <div className='cart-footer'>
-          <div className='cart-footer-top'>
-            <div className='cart-footer-price-label'>Total price</div>
-            <div className='cart-footer-price-eth'>{cartTotal} ETH</div>
+            <div className='cart-footer-top'>
+              <div className='cart-footer-price-label'>Total price</div>
+              <div className='cart-footer-price-eth'>{cartTotal} ETH</div>
+            </div>
+            <div className='cart-footer-price-usd'>{cartTotal} USD</div>
+            <Button className='purchase-btn' onClick={handlePurchase}>Complete Purchase</Button>
           </div>
-          <div className='cart-footer-price-usd'>{cartTotal} USD</div>
-          <Button className='purchase-btn' onClick={handlePurchase}>Complete Purchase</Button>
-      </div>
-
         </div>
-
         : 'Your Cart is empty!'
         }
       </div>
-
     </div>
   );
 };
