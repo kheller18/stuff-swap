@@ -29,7 +29,6 @@
   font-size: 16px;
   border-radius: 5px;
   border: none;
-  /* margin: 20px 0px 0px 0px; */
 }
 
 .update-artwork-button:hover {
@@ -39,7 +38,6 @@
 
 .update-artwork-form-body {
   border-top: 1px solid lightgrey;
-  /* border-bottom: 1px solid lightgrey; */
 }
 
 .artwork-form-section {

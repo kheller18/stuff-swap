@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from './Image';
-import logo from '../logos/stuff_swap.png';
 import logo2 from '../logos/bag_n_tag_dark_current.png';
 import bagtag from '../logos/bag_n_tag.png';
 import Button from './Button';
@@ -8,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEthereum } from  '@fortawesome/free-brands-svg-icons';
 import '../styles/ShopCollections.css';
 
+// component for shopping for a specific collection
 const ShopCollections = props => {
 
   return (

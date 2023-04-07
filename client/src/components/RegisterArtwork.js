@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from './Image';
-import logo from '../logos/stuff_swap.png';
 import '../styles/RegisterArtwork.css';
 import Button from './Button';
 import { pinArtwork } from '../utils/web3API';
@@ -14,11 +12,12 @@ const RegisterArtwork = props => {
     file: ''
   });
 
+  // function to register artwork
   const handleSubmit = async () => {
     await pinArtwork(collectionObj);
-    // pinFilePinata(collectionObj);
   };
 
+  // runs once component has mounted
   useEffect(() => {
     setCollectionObj({...collectionObj, address: props.wallet});
   }, [props.wallet]);

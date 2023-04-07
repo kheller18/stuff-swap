@@ -70,9 +70,6 @@
 
 .cart-body-item:hover {
   background-color: lightgrey;
-  /* display: flex;
-  flex-direction: row;
-  height: 20px; */
 }
 
 .cart-body-item-details {
@@ -95,10 +92,6 @@
   border-radius: 5px;
 }
 
-/* .cart-footer {
-  padding-left: 10px;
-  padding-right: 10px;
-} */
 .cart-footer {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -111,7 +104,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* margin-bottom: 20px; */
 }
 
 .purchase-btn {
@@ -137,14 +129,9 @@
 }
 
 .cart-body {
-  /* border-top: 1px solid lightgrey; */
-  /* border-bottom: 1px solid lightgrey; */
   padding-top: 20px;
   padding-bottom: 20px;
-  /* margin-left: 10px;
-  margin-right: 10px; */
 }
-
 
 .cart-item-name {
   font-weight: bold;

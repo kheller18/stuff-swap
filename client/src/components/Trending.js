@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Image from './Image';
-import logo from '../logos/stuff_swap.png';
 import '../styles/Trending.css';
 import CollectionsTable from './CollectionsTable';
 import ArtTable from './ArtTable';

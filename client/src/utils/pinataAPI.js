@@ -2,22 +2,8 @@ import Web3EthContract from 'web3-eth-contract';
 import Web3 from 'web3';
 import axios from 'axios';
 const FormData = require('form-data');
-// require('dotenv').config();
-// const fs = require('fs')
-// const JWT = 'Bearer PASTE_YOUR_PINATA_JWT'
 
-
-let jsonHeaders = {
-  "Content-Type": "application/json",
-  "pinata_api_key": process.env.REACT_APP_PINATA_API_KEY,
-  "pinata_secret_api_key": process.env.REACT_APP_PINATA_API_SECRET,
-}
-
-let fileHeaders = {
-  "pinata_api_key": `${process.env.REACT_APP_PINATA_API_KEY}`,
-  "pinata_secret_api_key": `${process.env.REACT_APP_PINATA_API_SECRET}`,
-}
-
+// gets data and ipfs hashing from pinata for user
 export const getUserFilesPinata = async (address) => {
   console.log(address)
   try {
@@ -42,6 +28,7 @@ export const getUserFilesPinata = async (address) => {
   }
 }
 
+// gets data and ipfs hashing from pinata for all NFT's besides the user
 export const getSiteFilesPinata = async (address) => {
   try {
     const res = await axios({
@@ -68,6 +55,7 @@ export const getSiteFilesPinata = async (address) => {
   }
 }
 
+// pins files and metadata to pinata
 export const pinFilePinata = async (item) => {
   let formData = new FormData();
   const metadata = JSON.stringify({
@@ -107,6 +95,7 @@ export const pinFilePinata = async (item) => {
   }
 }
 
+// updates metadata in pinata for ownership transfer or appraisal value change
 export const updatePinPinata = async (item, newAddress) => {
   console.log(item)
   console.log(newAddress);
@@ -140,6 +129,7 @@ export const updatePinPinata = async (item, newAddress) => {
   }
 }
 
+// updates metadata in pinata specifically for adding the tokenId that is passed back from solidity
 export const updateInitialPinPinata = async (item, ipfsHash, tokenId) => {
   console.log(ipfsHash)
   console.log(tokenId)

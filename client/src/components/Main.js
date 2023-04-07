@@ -9,10 +9,11 @@ const Main = props => {
   const [category, setCategory] = useState('All');
   const [siteContent, setSiteContent] = useState([]);
 
+  // waits for component to mount and then gets site files
   useEffect(() => {
+    // calls pinata function to get artwork
     const getSiteArtwork = async () => {
       const { ethereum } = window;
-      // let web3 = new Web3(ethereum);
       let accounts;
 
       try {
@@ -26,7 +27,6 @@ const Main = props => {
       setSiteContent(artwork.rows);
     }
     getSiteArtwork();
-
   }, [])
 
   return (

@@ -2,18 +2,16 @@ import React, { useState } from 'react';
 import Image from './Image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEthereum } from  '@fortawesome/free-brands-svg-icons';
-import '../styles/Art.css';
 import { useLocation } from 'react-router-dom';
 import Button from './Button';
+import '../styles/Art.css';
 
 const Art = props => {
-  // console.log(props);
-
   const location = useLocation();
   const [art, setArt] = useState(location.state);
-  // console.log(location.state)
+
+  // function to add nft to cart
   const handleClick = () => {
-    console.log('yo')
     props.setContent([...props.content, art])
   }
 
