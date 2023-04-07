@@ -12,11 +12,14 @@
 
 .owned-artwork-container {
   font-weight: bold;
+  height: 700px;
   /* display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%; */
   margin-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .owned-artwork-logo {

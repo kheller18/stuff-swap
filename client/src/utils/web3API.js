@@ -25,7 +25,7 @@ export const pinArtwork = async (item) => {
   const createTransaction = await web3.eth.sendTransaction(
     {
       from: accounts[0],
-      to: '0xD1bDd85157cE0D55Cd8D2C9F26172E6E463d7D39',
+      to: '0x5b9A6a113F636790F194b65Df69a758eed3eB6cc',
       data: myContract.methods.registerArtwork(
         item.name,
         item.artist,
@@ -84,7 +84,7 @@ export const transferArtwork = async (item, newAddress) => {
   const createTransaction = await web3.eth.sendTransaction(
     {
       from: accounts[0],
-      to: '0xD1bDd85157cE0D55Cd8D2C9F26172E6E463d7D39',
+      to: '0x5b9A6a113F636790F194b65Df69a758eed3eB6cc',
       data: myContract.methods.buyArtwork(
         item.metadata.keyvalues.tokenId,
         accounts[0],

@@ -52,7 +52,7 @@ const Cart = props => {
                   <div className='cart-body-item'>
                     <div className='cart-body-item-details'>
                       <div className='cart-body-image'>
-                        <Image className='cart-image' alt='' src={logo} />
+                        <Image className='cart-image' alt='' src={`https://ipfs.io/ipfs/${item.ipfs_pin_hash}`} />
                       </div>
                       <div className='cart-item-contents'>
                         <p className='cart-item-name'>{item.metadata.name}</p>

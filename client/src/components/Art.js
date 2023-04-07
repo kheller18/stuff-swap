@@ -29,10 +29,11 @@ const Art = props => {
         <div className='art-body-right'>
           <div className='art-card-details'>
             <div className='art-card-detail'>{art.metadata.name}</div>
-            <div className='art-card-detail'>Owned by {art.metadata.keyvalues.owner}</div>
+            <div className='art-card-detail'>Owned by {art.metadata.keyvalues.address}</div>
+            <div className='art-card-detail'>This is part of a collection called Bag N Tag</div>
             <div className='art-card-detail'>{art.metadata.keyvalues.price} ETH</div>
           </div>
-          <Button className='add-to-cart' onClick={handleClick}>Add to cart</Button>
+          <Button className='add-to-cart-art' onClick={handleClick}>Add to cart</Button>
         </div>
       </div>
     </div>
