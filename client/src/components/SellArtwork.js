@@ -1,13 +1,12 @@
 import React from 'react';
 import Image from './Image';
-import logo from '../logos/stuff_swap.png';
 import Button from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEthereum } from  '@fortawesome/free-brands-svg-icons';
 import bagtag from '../logos/bag_n_tag.png';
 import '../styles/SellArtwork.css';
 
-
+// component that lists your nfts and allows you to list them on the marketplace
 const SellArtwork = props => {
 
   return (

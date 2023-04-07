@@ -19,8 +19,6 @@ contract ArtRegistry is ERC721Enumerable, Ownable {
     }
 
     mapping(uint256 => Artwork) public artCollection;
-    // mapping(string => Artwork) public artCollection;
-    // event Tokens(address tokenId, uint256 appraisalValue, string reportURI);
 
     function registerArtwork(
         string memory name,

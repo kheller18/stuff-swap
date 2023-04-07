@@ -3,6 +3,7 @@ import Web3 from 'web3';
 import { pinFilePinata, updatePinPinata, updateInitialPinPinata } from './pinataAPI';
 import abi from '../contracts/compiled/stuffswapABI.json';
 
+// function for registering artwork
 export const pinArtwork = async (item) => {
   const ipfsFileHash = await pinFilePinata(item);
   console.log(ipfsFileHash)
@@ -22,6 +23,7 @@ export const pinArtwork = async (item) => {
     console.log(err)
   }
 
+  // web3 transaction using metamask to sign trnascation and register artwork
   const createTransaction = await web3.eth.sendTransaction(
     {
       from: accounts[0],
@@ -46,6 +48,7 @@ export const pinArtwork = async (item) => {
   }).catch(err => {console.log(err)});
 }
 
+// function to get tokenIds per address
 export const getArtwork = async () => {
   const { ethereum } = window;
   let web3 = new Web3(ethereum);
@@ -63,6 +66,7 @@ export const getArtwork = async () => {
   }
 }
 
+// function to sell and transfer ownership of artwork
 export const transferArtwork = async (item, newAddress) => {
   const { ethereum } = window;
   let web3 = new Web3(ethereum);
@@ -81,6 +85,7 @@ export const transferArtwork = async (item, newAddress) => {
     console.log(err)
   }
 
+  // web3 transaction which calls solidity method to buy artwork and transfers ownership once transaction is signed
   const createTransaction = await web3.eth.sendTransaction(
     {
       from: accounts[0],
@@ -101,6 +106,7 @@ export const transferArtwork = async (item, newAddress) => {
   .catch(err => {console.log(err)});
 }
 
+// function to get the current user address in the window
 export const getUserAddress = async () => {
   const { ethereum } = window;
   const metamaskIsInstalled = ethereum && ethereum.isMetaMask;

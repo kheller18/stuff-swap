@@ -1,12 +1,11 @@
 import React from 'react';
 import { useNavigate  } from 'react-router-dom';
-// import Image from './Image';
-// import logo from '../logos/stuff_swap.png';
 import '../styles/UserDropdown.css';
 
 const UserDropdown = props => {
   const navigate = useNavigate();
 
+  // handles click and switches to new routes
   const handleClick = (e) => {
     props.setShowUser(false);
 

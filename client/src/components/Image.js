@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Image = props => {
-
+  // module for dynamic image creation
   return (
     <img
       alt={props.alt}

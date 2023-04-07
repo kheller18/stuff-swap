@@ -2,6 +2,7 @@ import React from 'react';
 import Image from './Image';
 import logo from '../logos/stuff_swap.png';
 
+// upcoming component for filtering through components
 const ShopCollectionsNav = props => {
 
   return (
@@ -10,7 +11,7 @@ const ShopCollectionsNav = props => {
 
       </div>
       <div className='shop-collections-nav-body'>
-        
+
       </div>
     </div>
   );

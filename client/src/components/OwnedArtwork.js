@@ -1,42 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import Image from './Image';
-import logo from '../logos/stuff_swap.png';
-import Button from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEthereum } from  '@fortawesome/free-brands-svg-icons';
-import bagtag from '../logos/bag_n_tag.png';
-import { getArtwork } from '../utils/web3API';
 import { getUserFilesPinata } from '../utils/pinataAPI';
 import '../styles/OwnedArtwork.css';
-import Web3 from 'web3';
-
 
 
 const OwnedArtwork = props => {
   const [myArt, setMyArt] = useState([]);
 
+  // waits for component to mount and then queries to get artwork owned by user
   useEffect(() => {
     const getUserArtwork = async () => {
       const { ethereum } = window;
-      // let web3 = new Web3(ethereum);
       let accounts;
 
       try {
         accounts = await ethereum.request({
           method: "eth_requestAccounts",
         });
-        console.log(accounts);
-        // return accounts[0];
       } catch (err) {
-        console.log(err)
       }
+      // gets files from pinata
       const artwork = await getUserFilesPinata(accounts[0]);
-      console.log(artwork);
       setMyArt(artwork.rows);
     }
+
     getUserArtwork();
   }, [])
-  console.log(myArt)
+
   return (
     <div className='owned-artwork-container'>
       <div className='owned-artwork-header'>
@@ -65,5 +57,3 @@ const OwnedArtwork = props => {
 };
 
 export default OwnedArtwork;
-
-

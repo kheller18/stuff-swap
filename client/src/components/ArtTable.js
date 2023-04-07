@@ -1,18 +1,17 @@
 import React from 'react';
-import { useNavigate, Link  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Image from './Image';
 import logo from '../logos/bag_n_tag.png';
 import '../styles/CollectionsTable.css';
-import ShopCollections from './ShopCollections';
 
 const ArtTable = props => {
+  // initializes object for redirecting to different routes
   let navigate = useNavigate();
 
+  // navigates to different url based on the art requested
   const handleClick = (e, art) => {
     navigate('/artwork/item', {state: art}); // handles redirect from click
   };
-
-  console.log(props.content)
 
   return (
     <div className='collections-table-container'>
@@ -27,7 +26,6 @@ const ArtTable = props => {
         </thead>
         <tbody>
           {props.content.map((art, index) => {
-
             return (
               <tr onClick={e => handleClick(e, art)} className='collection'>
                 <td className='collection-rank'>{index + 1}</td>
@@ -42,9 +40,6 @@ const ArtTable = props => {
           })}
         </tbody>
       </table>
-
-
-
       <table className='collections-table-right'>
         <thead className='collections-table-headers'>
           <tr>
@@ -102,7 +97,6 @@ const ArtTable = props => {
           </tr>
         </tbody>
       </table>
-
     </div>
   );
 };
