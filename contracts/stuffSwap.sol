@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 
-contract ArtRegistry is ERC721Enumerable, Ownable {
+contract StuffSwapMarket is ERC721Enumerable, Ownable {
     constructor(
         // string memory _artist,
         // uint256 price,
