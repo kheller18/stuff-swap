@@ -38,22 +38,9 @@ The project will involve building the front-end of the website using [HTML](http
 
 ## 2. Usage
 
-  After cloning the repository locally, you'll need to have the packages listed in [Installation](#1-installation) installed on your machine. To do so, you'll need to navigate to your web browser and follow this link https://metamask.io/ , you will then hit the download button. 
+  You'll need to navigate to your web browser and follow this link https://metamask.io/, you will then hit the download button. 
 
   After this is installed, please refer to the [Deployment](#6-deployment) section for instructions on how to view or edit the notebook.
-  
-  
-  
-  ![image](https://user-images.githubusercontent.com/116121637/230520641-234b5798-8667-44e8-a396-93e2a8f93f78.png)
-  ![image](https://user-images.githubusercontent.com/116121637/230521173-aab4dc7b-c45c-4b1a-a613-e9fb7fa33b06.png)
-  ![image](https://user-images.githubusercontent.com/116121637/230520870-b75777c5-bedb-4b6a-85ab-02151a465e8e.png)
-  ![image](https://user-images.githubusercontent.com/116121637/230520690-f230fe9f-8bf3-4d54-9ca4-17aa980b66ab.png)
-  ![image](https://user-images.githubusercontent.com/116121637/230521498-c22babb7-ae55-42ae-92c4-c4a35dedf522.png)
-
-
-
-
-
 
 ---
 
@@ -101,6 +88,9 @@ The project will involve building the front-end of the website using [HTML](http
 
 ## 6. Deployment
   + There is currently no live deployment of this notebook on a common server, but the user has the ability to run this notebook locally on their machine via:
+
+  ![Registering new artwork](register_new_artwork.gif)
+
 
 ---
 
