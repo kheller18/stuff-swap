@@ -17,9 +17,6 @@ let fileHeaders = {
   "pinata_api_key": `${process.env.REACT_APP_PINATA_API_KEY}`,
   "pinata_secret_api_key": `${process.env.REACT_APP_PINATA_API_SECRET}`,
 }
-// const loadContract = async () => {
-
-// }
 
 export const getUserFilesPinata = async (address) => {
   console.log(address)
@@ -79,6 +76,7 @@ export const pinFilePinata = async (item) => {
       artist: item.artist,
       price: item.price,
       address: item.address,
+      creator: item.address,
       selling: 'true'
     }
   });
@@ -109,14 +107,18 @@ export const pinFilePinata = async (item) => {
   }
 }
 
-export const updatePinPinata = async (item) => {
+export const updatePinPinata = async (item, newAddress) => {
+  console.log(item)
+  console.log(newAddress);
   const data = JSON.stringify({
-    "ipfsPinHash": item.ipfsPinHash,
-    "name": item.name,
+    "ipfsPinHash": item.ipfs_pin_hash,
+    "name": item.metadata.name,
     "keyvalues": {
-      artist: item.artist,
-      price: item.price,
-      address: item.address,
+      artist: item.metadata.keyvalues.artist,
+      price: item.metadata.keyvalues.price,
+      address: newAddress,
+      creator: item.metadata.keyvalues.creator,
+      tokenId: item.metadata.keyvalues.tokenId,
       selling: 'true'
     }
   });
@@ -137,3 +139,37 @@ export const updatePinPinata = async (item) => {
     console.log(error);
   }
 }
+
+export const updateInitialPinPinata = async (item, ipfsHash, tokenId) => {
+  console.log(ipfsHash)
+  console.log(tokenId)
+  const data = JSON.stringify({
+    "ipfsPinHash": ipfsHash.IpfsHash,
+    "name": item.name,
+    "keyvalues": {
+      artist: item.artist,
+      price: item.price,
+      address: item.address,
+      creator: item.address,
+      tokenId: tokenId,
+      selling: 'true'
+    }
+  });
+
+  try {
+    const res = await axios({
+      method: "put",
+      url: 'https://api.pinata.cloud/pinning/hashMetadata',
+      headers: {
+          'pinata_api_key': `${process.env.REACT_APP_PINATA_API_KEY}`,
+          'pinata_secret_api_key': `${process.env.REACT_APP_PINATA_API_SECRET}`,
+          "Content-Type": "application/json"
+      },
+      data: data
+    });
+    console.log(res);
+  } catch (error) {
+    console.log(error);
+  }
+}
+

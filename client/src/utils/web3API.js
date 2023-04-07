@@ -1,6 +1,6 @@
 import Web3EthContract from 'web3-eth-contract';
 import Web3 from 'web3';
-import { pinFilePinata, updatePinPinata } from './pinataAPI';
+import { pinFilePinata, updatePinPinata, updateInitialPinPinata } from './pinataAPI';
 import abi from '../contracts/compiled/stuffswapABI.json';
 
 export const pinArtwork = async (item) => {
@@ -40,9 +40,10 @@ export const pinArtwork = async (item) => {
         chainId: 1337
       }
     },
-  ).then(result => {console.log(result)})
-  .catch(err => {console.log(err)});
-
+  ).then(async result => {
+    const tokenId = web3.utils.hexToNumber(result.logs[0].topics[3]);
+    await updateInitialPinPinata(item, ipfsFileHash, tokenId);
+  }).catch(err => {console.log(err)});
 }
 
 export const getArtwork = async () => {
@@ -55,15 +56,49 @@ export const getArtwork = async () => {
     accounts =  await ethereum.request({
       method: "eth_requestAccounts",
     });
-    console.log(accounts);
     const tokenIds = await myContract.methods.getTokenIds(accounts[0]);
-    console.log(myContract)
-    console.log(tokenIds);
     return tokenIds;
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export const transferArtwork = async (item, newAddress) => {
+  const { ethereum } = window;
+  let web3 = new Web3(ethereum);
+  let myContract = new web3.eth.Contract(abi,`${process.env.REACT_APP_SMART_CONTRACT_ADDRESS}`);
+  let accounts;
+  console.log(item);
+
+
+  try {
+    accounts =  await ethereum.request({
+      method: "eth_requestAccounts",
+    });
+    console.log(accounts);
     // return accounts[0];
   } catch (err) {
     console.log(err)
   }
+
+  const createTransaction = await web3.eth.sendTransaction(
+    {
+      from: accounts[0],
+      to: '0xD1bDd85157cE0D55Cd8D2C9F26172E6E463d7D39',
+      data: myContract.methods.buyArtwork(
+        item.metadata.keyvalues.tokenId,
+        accounts[0],
+      ).encodeABI(),
+      common: {
+        networkId: 5777,
+        chainId: 1337
+      }
+    },
+  ).then(async result => {
+    await updatePinPinata(item, accounts[0]);
+
+  })
+  .catch(err => {console.log(err)});
 }
 
 export const getUserAddress = async () => {

@@ -5,11 +5,11 @@ import logo from '../logos/bag_n_tag.png';
 import '../styles/CollectionsTable.css';
 import ShopCollections from './ShopCollections';
 
-const CollectionsTable = props => {
+const ArtTable = props => {
   let navigate = useNavigate();
 
-  const handleClick = e => {
-    navigate('/collection'); // handles redirect from click
+  const handleClick = (e, art) => {
+    navigate('/artwork/item', {state: art}); // handles redirect from click
   };
 
   return (
@@ -18,22 +18,22 @@ const CollectionsTable = props => {
         <thead className='collections-table-headers'>
           <tr>
             <th className='collections-table-header' id='rank'>Rank</th>
-            <th className='collections-table-header' id='collection'>Collection</th>
-            <th className='collections-table-header' id='floor-price'>Floor Price</th>
+            <th className='collections-table-header' id='collection'>NFT</th>
+            <th className='collections-table-header' id='floor-price'>Price</th>
             <th className='collections-table-header' id='volume'>Volume</th>
           </tr>
         </thead>
         <tbody>
           {props.content.map((art, index) => {
             return (
-              <tr onClick={e => handleClick(e)} className='collection'>
+              <tr onClick={e => handleClick(e, art)} className='collection'>
                 <td className='collection-rank'>{index + 1}</td>
                 <td className='collection-item'>
                   <Image className='collection-image' src={`https://ipfs.io/ipfs/${art.ipfs_pin_hash}`} />
                   <p className='collection-name'>{art.metadata.name}</p>
                 </td>
                 <td className='collection-item-floor-price'>{art.metadata.keyvalues.price} ETH</td>
-                <td className='collection-item-volume'>25 ETH</td>
+                <td className='collection-item-volume'>{index} ETH</td>
               </tr>
             )
           })}
@@ -131,4 +131,4 @@ const CollectionsTable = props => {
   );
 };
 
-export default CollectionsTable;
+export default ArtTable;
