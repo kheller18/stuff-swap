@@ -21,7 +21,7 @@ const RegisterArtwork = props => {
 
   useEffect(() => {
     setCollectionObj({...collectionObj, address: props.wallet});
-  }, [props.wallet])
+  }, [props.wallet]);
 
   return (
     <div className='register-artwork-container'>

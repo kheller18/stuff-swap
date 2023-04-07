@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWallet, faCartShopping, faUser } from  '@fortawesome/free-solid-svg-icons';
+import { faCircle } from  '@fortawesome/free-regular-svg-icons';
 import Web3EthContract from 'web3-eth-contract';
 import Web3 from 'web3';
 import Cart from './Cart';
@@ -60,7 +61,11 @@ const Header = props => {
       </div>
       <div className="header-right">
         <FontAwesomeIcon className='header-icon' id='user-icon' icon={faUser} onClick={handleUserClick} />
-        <FontAwesomeIcon className='header-icon' id='cart-icon' icon={faCartShopping} onClick={handleClick}/>
+        <div>
+          <FontAwesomeIcon className='header-icon' id='cart-icon' icon={faCartShopping} onClick={handleClick}/>
+          <FontAwesomeIcon className='header-icon' id='cart-icon' icon={faCircle} />
+
+        </div>
         <FontAwesomeIcon className='header-icon' id='wallet-icon' icon={faWallet} onClick={handleWalletClick} />
       </div>
       {showUser ?
@@ -68,7 +73,7 @@ const Header = props => {
       : null
       }
       {showCart ?
-        <Cart showCart={showCart} setCartStatus={setShowCart} />
+        <Cart content={props.content} setContent={props.setContent} showCart={showCart} setCartStatus={setShowCart} />
       : null
       }
     </div>

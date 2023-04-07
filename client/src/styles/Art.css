@@ -1,25 +1,30 @@
-.owned-artwork-header {
-  color: white;
-  /* text-align: left; */
+.art-container {
+  height: 700px;
+  font-weight: bold;
   display: flex;
   flex-direction: row;
-  justify-content: left;
-  font-weight: bold;
-  margin: 10px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid white;
-}
-
-.owned-artwork-container {
-  font-weight: bold;
-  /* display: flex;
-  flex-direction: row;
   justify-content: center;
-  width: 100%; */
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
-.owned-artwork-logo {
+.art-header {
+  background-image: url("../logos/bag_n_tag.png");
+  height: 400px;
+  margin-bottom: 100px;
+}
+
+.art-body {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  height: 650px;
+}
+
+.art-body-right {
+  width: 500px;
+}
+
+.art-logo {
   height: 200px;
   width: 200px;
   border-radius: 5px;
@@ -32,46 +37,45 @@
   align-items: center; */
 }
 
-.owned-artwork-background-img {
+.art-background-img {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   height: 460px;
 }
 
-.owned-artwork-info {
+.info {
   display: flex;
   flex-direction: row;
   font-weight: bold;
 }
 
-.shop-owned-artwork-subheader {
+.art-subheader {
   color: white;
   text-align: left;
   padding-left: 100px;
   /* display: flex; */
 }
 
-.owned-artwork-item-card {
+.art-card {
   border-radius: 5px;
   margin: 10px;
   width: 250px;
-  height: 310px;
+  height: 350px;
   background-color: white;
   color: #001140;
   overflow: hidden;
 }
 
-.owned-artwork-items {
+.shop-art-items {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
-.owned-artwork-item-card-img {
-  width: 250px;
-  height: 250px;
+.art-card-img {
+  width: 650px;
+  height: 650px;
   /* width: 100%;
   height: 100%; */
   border-radius: 5px;
@@ -80,16 +84,16 @@
   z-index: 1;
 }
 
-.owned-artwork-item-card-img-container {
-  width: 250px;
-  height: 250px;
+.art-card-img-container {
+  width: 650px;
+  height: 650px;
   overflow: hidden;
   /* position: absolute; */
 }
 
-.owned-artwork-item-card-img:hover {
+.art-card-img:hover {
   cursor: pointer;
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .add-to-cart {
@@ -106,19 +110,20 @@
   opacity: .9;
 }
 
-.owned-card-details {
+.art-card-details {
   padding-left: 15px;
   color: var(--background-color-primary);
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
   height: 60px;
   justify-content: center;
   display: flex;
   flex-direction: column;
+  align-items: left;
 }
-.card-detail {
+.art-card-detail {
   margin: 2px;
 }
-/* .collection-item-card:hover + .add-to-cart {
+/* .item-card:hover + .add-to-cart {
   display: flex;
 } */
 
