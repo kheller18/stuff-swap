@@ -7,6 +7,7 @@ contract StuffSwapMarket is ERC721Enumerable, Ownable {
     constructor(
     ) ERC721("StuffSwap", "SSWP") {}
 
+// A data structure defined as a struct named Artwork that has multiple properties including name, artist, price, only owner can recieve payments, creatorAddress, initialSupply or total supply on an NFT, ipfs (storage and hash of the artworks digital file), and selling (true/false variable if the artwork is selling or not)
     struct Artwork {
         string name;
         string artist;
@@ -17,9 +18,10 @@ contract StuffSwapMarket is ERC721Enumerable, Ownable {
         string ipfs;
         bool selling;
     }
-
+// Public mapping that maps NFT token ids to the Artwork struct
     mapping(uint256 => Artwork) public artCollection;
 
+// Function that allows users to register NFT artworks on the marketplace 
     function registerArtwork(
         string memory name,
         string memory artist,
@@ -38,6 +40,7 @@ contract StuffSwapMarket is ERC721Enumerable, Ownable {
         return tokenId;
     }
 
+// Function that allows the owner of an NFT to list it for sale on the marketplace. Ensuring that the sender address matches the owner address.
     function listArtwork(
         uint256 tokenId,
         uint256 newPrice,
@@ -49,6 +52,7 @@ contract StuffSwapMarket is ERC721Enumerable, Ownable {
         return artCollection[tokenId].price;
     }
 
+// Function that allows users to purchase NFTs from the marketplace. Inside the function there is a _transfer function that transfers ownership including the tokenId from the NFTs current owner to the new owners address
     function buyArtwork(
         uint256 tokenId,
         address payable sender
