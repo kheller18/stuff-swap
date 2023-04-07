@@ -8,31 +8,6 @@
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "price",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "string",
-				"name": "reportURI",
-				"type": "string"
-			}
-		],
-		"name": "Appraisal",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
 				"indexed": true,
 				"internalType": "address",
 				"name": "owner",
@@ -105,17 +80,41 @@
 				"type": "uint256"
 			},
 			{
+				"internalType": "address payable",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "buyArtwork",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
 				"internalType": "uint256",
 				"name": "newPrice",
 				"type": "uint256"
 			},
 			{
-				"internalType": "string",
-				"name": "reportURI",
-				"type": "string"
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
 			}
 		],
-		"name": "newAppraisal",
+		"name": "listArtwork",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -148,11 +147,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
 				"internalType": "string",
 				"name": "name",
 				"type": "string"
@@ -164,12 +158,27 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "initialPrice",
+				"name": "price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address payable",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address payable",
+				"name": "creator",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "mintAmount",
 				"type": "uint256"
 			},
 			{
 				"internalType": "string",
-				"name": "tokenURI",
+				"name": "ipfs",
 				"type": "string"
 			}
 		],
@@ -345,6 +354,31 @@
 				"internalType": "uint256",
 				"name": "price",
 				"type": "uint256"
+			},
+			{
+				"internalType": "address payable",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address payable",
+				"name": "creatorAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "initialSupply",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "ipfs",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "selling",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",

@@ -12,6 +12,8 @@ const ArtTable = props => {
     navigate('/artwork/item', {state: art}); // handles redirect from click
   };
 
+  console.log(props.content)
+
   return (
     <div className='collections-table-container'>
       <table className='collections-table-left'>
@@ -25,6 +27,7 @@ const ArtTable = props => {
         </thead>
         <tbody>
           {props.content.map((art, index) => {
+
             return (
               <tr onClick={e => handleClick(e, art)} className='collection'>
                 <td className='collection-rank'>{index + 1}</td>
@@ -37,33 +40,6 @@ const ArtTable = props => {
               </tr>
             )
           })}
-          <tr onClick={e => handleClick(e)} className='collection'>
-            <td className='collection-rank'>1</td>
-            <td className='collection-item'>
-              <Image className='collection-image' src={logo} />
-              <p className='collection-name'>Bag N Tag</p>
-            </td>
-            <td className='collection-item-floor-price'>0.10 ETH</td>
-            <td className='collection-item-volume'>25 ETH</td>
-          </tr>
-          <tr onClick={e => handleClick(e)} className='collection'>
-            <td className='collection-rank'>2</td>
-            <td className='collection-item'>
-              <Image className='collection-image' src={logo} />
-              <p className='collection-name'>Bag N Tag</p>
-            </td>
-            <td className='collection-item-floor-price'>0.10 ETH</td>
-            <td className='collection-item-volume'>25 ETH</td>
-          </tr>
-          <tr onClick={e => handleClick(e)} className='collection'>
-            <td className='collection-rank'>3</td>
-            <td className='collection-item'>
-              <Image className='collection-image' src={logo} />
-              <p className='collection-name'>Bag N Tag</p>
-            </td>
-            <td className='collection-item-floor-price'>0.10 ETH</td>
-            <td className='collection-item-volume'>25 ETH</td>
-          </tr>
         </tbody>
       </table>
 

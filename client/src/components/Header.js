@@ -63,7 +63,7 @@ const Header = props => {
         <FontAwesomeIcon className='header-icon' id='user-icon' icon={faUser} onClick={handleUserClick} />
         <div>
           <FontAwesomeIcon className='header-icon' id='cart-icon' icon={faCartShopping} onClick={handleClick}/>
-          <FontAwesomeIcon className='header-icon' id='cart-icon' icon={faCircle} />
+          {/* <FontAwesomeIcon className='header-icon' id='cart-icon' icon={faCircle} /> */}
 
         </div>
         <FontAwesomeIcon className='header-icon' id='wallet-icon' icon={faWallet} onClick={handleWalletClick} />

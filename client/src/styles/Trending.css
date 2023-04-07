@@ -2,6 +2,7 @@
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  margin-left: 40px;
 }
 
 .category-item {

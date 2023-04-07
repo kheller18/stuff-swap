@@ -1,53 +1,61 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.8;
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC721/ERC721Full.sol";
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
-
-// import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+pragma solidity ^0.8.7;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-
 contract ArtRegistry is ERC721Enumerable, Ownable {
-    constructor() public ERC721("ArtRegistryToken", "ART") {}
+    constructor(
+    ) ERC721("StuffSwap", "SSWP") {}
 
     struct Artwork {
         string name;
         string artist;
         uint256 price;
+        address payable owner;
+        address payable creatorAddress;
+        uint256 initialSupply;
+        string ipfs;
+        bool selling;
     }
 
     mapping(uint256 => Artwork) public artCollection;
-
-    event Appraisal(uint256 tokenId, uint256 price, string reportURI);
+    // mapping(string => Artwork) public artCollection;
+    // event Tokens(address tokenId, uint256 appraisalValue, string reportURI);
 
     function registerArtwork(
-        address owner,
         string memory name,
         string memory artist,
-        uint256 initialPrice,
-        string memory tokenURI
+        uint256 price,
+        address payable owner,
+        address payable creator,
+        uint256 mintAmount,
+        string memory ipfs
     ) public returns (uint256) {
         uint256 tokenId = totalSupply();
 
-        _mint(owner, tokenId);
-        // _setTokenURI(tokenId, tokenURI);
-        tokenURI = 'https://ipfs.io/ipfs/Qmf9LwDLB3gkCqxEYfZbVT8AJtuPWEUSxNG86qucqMV7AV';
+        _mint(creator, tokenId);
 
-        artCollection[tokenId] = Artwork(name, artist, initialPrice);
+        artCollection[tokenId] = Artwork(name, artist, price, owner, creator, mintAmount, ipfs, false);
 
         return tokenId;
     }
 
-    function newAppraisal(
+    function listArtwork(
         uint256 tokenId,
         uint256 newPrice,
-        string memory reportURI
+        address sender
     ) public returns (uint256) {
+        require(artCollection[tokenId].owner == sender, "You dont have access to this");
         artCollection[tokenId].price = newPrice;
-
-        emit Appraisal(tokenId, newPrice, reportURI);
-
+        artCollection[tokenId].selling = true;
         return artCollection[tokenId].price;
+    }
+
+    function buyArtwork(
+        uint256 tokenId,
+        address payable sender
+    ) public returns (address) {
+        _transfer(artCollection[tokenId].owner, sender, tokenId);
+        return artCollection[tokenId].owner;
     }
 }

@@ -57,53 +57,8 @@ const OwnedArtwork = props => {
               </div>
             )
           })}
-          <div className='owned-artwork-item-card'>
-            <div className='owned-artwork-item-card-img-container'>
-              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
-              <Image className='owned-artwork-item-card-img' src={bagtag} />
-            </div>
-            <div className='owned-card-details'>
-              <div className='card-detail'>Bag N Tag #1</div>
-            </div>
-          </div>
-          <div className='owned-artwork-item-card'>
-            <div className='owned-artwork-item-card-img-container'>
-              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
-              <Image className='owned-artwork-item-card-img' src={bagtag} />
-            </div>
-            <div className='owned-card-details'>
-              <div className='card-detail'>Bag N Tag #1</div>
-            </div>
-          </div>
-          <div className='owned-artwork-item-card'>
-            <div className='owned-artwork-item-card-img-container'>
-              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
-              <Image className='owned-artwork-item-card-img' src={bagtag} />
-            </div>
-            <div className='owned-card-details'>
-              <div className='card-detail'>Bag N Tag #1</div>
-            </div>
-          </div>
-          <div className='owned-artwork-item-card'>
-            <div className='owned-artwork-item-card-img-container'>
-              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
-              <Image className='owned-artwork-item-card-img' src={bagtag} />
-            </div>
-            <div className='owned-card-details'>
-              <div className='card-detail'>Bag N Tag #1</div>
-            </div>
-          </div>
-          <div className='owned-artwork-item-card'>
-            <div className='owned-artwork-item-card-img-container'>
-              <FontAwesomeIcon className='chain-symbol' icon={faEthereum} />
-              <Image className='owned-artwork-item-card-img' src={bagtag} />
-            </div>
-            <div className='owned-card-details'>
-              <div className='card-detail'>Bag N Tag #1</div>
-            </div>
-          </div>
         </div>
-      : ''
+      : 'You do not own any artwork!'
       }
     </div>
   );

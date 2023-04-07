@@ -1,7 +1,7 @@
 .collections-table-left {
   color: white;
   /* justify-content: center; */
-  width: 800px;
+  width: 700px;
   border: 2px solid white;
   /* border-left: 1px solid white;
   border-bottom: 1px solid white; */
@@ -14,7 +14,7 @@
 .collections-table-right {
   color: white;
   /* justify-content: center; */
-  width: 800px;
+  width: 700px;
   border: 2px solid white;
   font-weight: bold;
   border-top-right-radius: 5px;
