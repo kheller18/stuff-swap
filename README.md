@@ -41,6 +41,15 @@ The project will involve building the front-end of the website using [HTML](http
   After cloning the repository locally, you'll need to have the packages listed in [Installation](#1-installation) installed on your machine. To do so, you'll need to navigate to your web browser and follow this link https://metamask.io/ , you will then hit the download button. 
 
   After this is installed, please refer to the [Deployment](#6-deployment) section for instructions on how to view or edit the notebook.
+  
+  ![image](https://user-images.githubusercontent.com/116121637/230520524-90a77251-cd82-4afe-9710-0f059431f4e5.png)
+  ![image](https://user-images.githubusercontent.com/116121637/230520605-8f9840b9-b828-4cb2-ae83-4bfd1901b87a.png)
+  ![image](https://user-images.githubusercontent.com/116121637/230520641-234b5798-8667-44e8-a396-93e2a8f93f78.png)
+  ![image](https://user-images.githubusercontent.com/116121637/230520690-f230fe9f-8bf3-4d54-9ca4-17aa980b66ab.png)
+
+
+
+
 
 ---
 
