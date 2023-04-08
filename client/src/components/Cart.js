@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Image from './Image';
 import Button from './Button';
-import logo from '../logos/stuff_swap.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faTrash } from  '@fortawesome/free-solid-svg-icons';
-import '../styles/Cart.css';
 import { transferArtwork } from '../utils/web3API';
-
+import '../styles/Cart.css';
 
 const Cart = props => {
   const [cartTotal, setCartTotal] = useState('0');

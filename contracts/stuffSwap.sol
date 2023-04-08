@@ -18,6 +18,7 @@ contract StuffSwapMarket is ERC721Enumerable, Ownable {
         string ipfs;
         bool selling;
     }
+
 // Public mapping that maps NFT token ids to the Artwork struct
     mapping(uint256 => Artwork) public artCollection;
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/RegisterArtwork.css';
 import Button from './Button';
 import { pinArtwork } from '../utils/web3API';
+import '../styles/RegisterArtwork.css';
 
 const RegisterArtwork = props => {
   const [collectionObj, setCollectionObj] = useState({

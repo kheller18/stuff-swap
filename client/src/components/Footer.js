@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import '../styles/Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 import { faDiscord, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Button from './Button';
+import '../styles/Footer.css';
 
 const Footer = props => {
   // state controlled field for email submittal

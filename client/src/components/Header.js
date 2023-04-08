@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Image from './Image';
 import logo from '../logos/logo_no_text.png';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWallet, faCartShopping, faUser } from  '@fortawesome/free-solid-svg-icons';
 // import { faCircle } from  '@fortawesome/free-regular-svg-icons';
 import Cart from './Cart';
 import UserDropdown from './UserDropdown';
 import { getUserAddress } from '../utils/web3API';
+import '../styles/Header.css';
 
 const Header = props => {
   const [showCart, setShowCart] = useState(false);

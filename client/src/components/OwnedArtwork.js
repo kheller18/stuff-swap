@@ -24,10 +24,10 @@ const OwnedArtwork = props => {
       // gets files from pinata
       const artwork = await getUserFilesPinata(accounts[0]);
       setMyArt(artwork.rows);
-    }
+    };
 
     getUserArtwork();
-  }, [])
+  }, []);
 
   return (
     <div className='owned-artwork-container'>
