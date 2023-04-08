@@ -1,4 +1,3 @@
-import Web3EthContract from 'web3-eth-contract';
 import Web3 from 'web3';
 import { pinFilePinata, updatePinPinata, updateInitialPinPinata } from './pinataAPI';
 import abi from '../contracts/compiled/stuffswapABI.json';
@@ -6,7 +5,6 @@ import abi from '../contracts/compiled/stuffswapABI.json';
 // function for registering artwork
 export const pinArtwork = async (item) => {
   const ipfsFileHash = await pinFilePinata(item);
-  console.log(ipfsFileHash)
   const ipfsURI = `ipfs://${ipfsFileHash.IpfsHash}`;
   const { ethereum } = window;
   let web3 = new Web3(ethereum);
@@ -17,8 +15,6 @@ export const pinArtwork = async (item) => {
     accounts =  await ethereum.request({
       method: "eth_requestAccounts",
     });
-    console.log(accounts);
-    // return accounts[0];
   } catch (err) {
     console.log(err)
   }
@@ -27,7 +23,7 @@ export const pinArtwork = async (item) => {
   const createTransaction = await web3.eth.sendTransaction(
     {
       from: accounts[0],
-      to: '0x5b9A6a113F636790F194b65Df69a758eed3eB6cc',
+      to: `${process.env.REACT_APP_SMART_CONTRACT_ADDRESS}`,
       data: myContract.methods.registerArtwork(
         item.name,
         item.artist,
@@ -72,15 +68,11 @@ export const transferArtwork = async (item, newAddress) => {
   let web3 = new Web3(ethereum);
   let myContract = new web3.eth.Contract(abi,`${process.env.REACT_APP_SMART_CONTRACT_ADDRESS}`);
   let accounts;
-  console.log(item);
-
 
   try {
     accounts =  await ethereum.request({
       method: "eth_requestAccounts",
     });
-    console.log(accounts);
-    // return accounts[0];
   } catch (err) {
     console.log(err)
   }
@@ -89,7 +81,7 @@ export const transferArtwork = async (item, newAddress) => {
   const createTransaction = await web3.eth.sendTransaction(
     {
       from: accounts[0],
-      to: '0x5b9A6a113F636790F194b65Df69a758eed3eB6cc',
+      to: `${process.env.REACT_APP_SMART_CONTRACT_ADDRESS}`,
       data: myContract.methods.buyArtwork(
         item.metadata.keyvalues.tokenId,
         accounts[0],
@@ -101,9 +93,7 @@ export const transferArtwork = async (item, newAddress) => {
     },
   ).then(async result => {
     await updatePinPinata(item, accounts[0]);
-
-  })
-  .catch(err => {console.log(err)});
+  }).catch(err => {console.log(err)});
 }
 
 // function to get the current user address in the window
@@ -111,16 +101,13 @@ export const getUserAddress = async () => {
   const { ethereum } = window;
   const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
   if (metamaskIsInstalled) {
-    // Web3EthContract.setProvider(ethereum);
     let web3 = new Web3(ethereum);
     try {
       const accounts =  await ethereum.request({
         method: "eth_requestAccounts",
       });
-      console.log(accounts);
       return accounts[0];
     } catch (err) {
-      // dispatch(connectFailed("Something went wrong."));
     }
   } else {
     console.log('install metamask');

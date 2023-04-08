@@ -1,5 +1,3 @@
-import Web3EthContract from 'web3-eth-contract';
-import Web3 from 'web3';
 import axios from 'axios';
 const FormData = require('form-data');
 
@@ -21,7 +19,6 @@ export const getUserFilesPinata = async (address) => {
         }
       }
   });
-    // console.log(res);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -48,7 +45,6 @@ export const getSiteFilesPinata = async (address) => {
         }
       }
   });
-    // console.log(res);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -88,7 +84,6 @@ export const pinFilePinata = async (item) => {
           "Content-Type": "multipart/form-data"
       },
     });
-    console.log(res.data);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -123,7 +118,7 @@ export const updatePinPinata = async (item, newAddress) => {
       },
       data: data
     });
-    console.log(res.data);
+    return res.data;
   } catch (error) {
     console.log(error);
   }
@@ -157,9 +152,8 @@ export const updateInitialPinPinata = async (item, ipfsHash, tokenId) => {
       },
       data: data
     });
-    console.log(res);
+    return res.data;
   } catch (error) {
     console.log(error);
   }
 }
-
