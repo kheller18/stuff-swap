@@ -32,7 +32,8 @@ When the art has been uploaded and a price has been set, all other users on the 
 When the user clicks `Add to Cart`, the selected NFT will now be in their cart. The user can then click the cart icon in the header and it will bring them to a screen that looks like this:
 ![cart](media/images/cart_v2.png)
 
-The user can then complete the purchase by clicking `Complete Purchase`. MetaMask will prompt the user to confirm the transaction. Once selected and if the transaction is successful, when the user naviages back to the `My Art` page, they will see the art they have just purchased!
+The user can then complete the purchase by clicking `Complete Purchase`. MetaMask will prompt the user to confirm the transaction. Once selected and if the transaction is successful, when the user naviages back to the `My Art` page, they will see the art they have just purchased! You can see a demonstration of the process below:
+![buy artwork](media/gifs/site/buy_artwork.gif)
 
 A gif below shows the process of registering art and finding it in the `My Art` tab.
 ![register new art gif](media/gifs/site/register_artwork.gif)
