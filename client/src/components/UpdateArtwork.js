@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/UpdateArtwork.css';
 import { updatePinPinata } from '../utils/pinataAPI';
 import Button from './Button';
+import '../styles/UpdateArtwork.css';
 
 const UpdateArtwork = props => {
 
@@ -15,7 +15,7 @@ const UpdateArtwork = props => {
     // handles updating a pinata pin already created
     const handleUpdate = () => {
       updatePinPinata(collectionObj);
-    }
+    };
 
     return (
       <div className='update-artwork-container'>

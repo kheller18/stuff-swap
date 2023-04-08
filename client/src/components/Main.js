@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from './Carousel';
-import '../styles/Main.css';
 import Trending from './Trending';
 import { getSiteFilesPinata } from '../utils/pinataAPI';
-
+import '../styles/Main.css';
 
 const Main = props => {
   const [category, setCategory] = useState('All');
@@ -11,6 +10,7 @@ const Main = props => {
 
   // waits for component to mount and then gets site files
   useEffect(() => {
+
     // calls pinata function to get artwork
     const getSiteArtwork = async () => {
       const { ethereum } = window;
@@ -25,9 +25,9 @@ const Main = props => {
       }
       const artwork = await getSiteFilesPinata(accounts[0]);
       setSiteContent(artwork.rows);
-    }
+    };
     getSiteArtwork();
-  }, [])
+  }, []);
 
   return (
     <div className='main-container'>

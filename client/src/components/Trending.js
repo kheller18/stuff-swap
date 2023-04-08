@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/Trending.css';
 import CollectionsTable from './CollectionsTable';
 import ArtTable from './ArtTable';
+import '../styles/Trending.css';
 
 const Trending = props => {
   const [category, setCategory] = useState('Trending');
