@@ -19,7 +19,9 @@ As we can see, the user can choose different NFT's to view either from the top c
   + Settings (not yet available)
 
 For example, if the user wanted to register their art and clicked that link, they would be brought to the following screen:
+
 ![register art](media/images/register_artwork.png)
+
 If this is the first time the user has visited the site, [MetaMask](https://metamask.io/download/) will prompt the user asking for it to connect the site to the wallet.
 ![connect to site](media/images/wallet_connected.png)
 
