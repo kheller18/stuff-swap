@@ -40,7 +40,8 @@ The user can then complete the purchase by clicking `Complete Purchase`. MetaMas
 A gif below shows the process of registering art and finding it in the `My Art` tab.
 ![register new art gif](media/gifs/site/register_artwork.gif)
 
-Check out the skills from [Audell Sabeti](https://www.linkedin.com/in/audell-sabeti-38375a1b2)! Here are a couple of the NFT's he created. You can find more in the `media/bags/` directory.
+Check out the skills from [Audell Sabeti](https://www.linkedin.com/in/audell-sabeti-38375a1b2)! Here are a couple of the NFT's he created.You can find more in the `media/bags/` directory.
+
 ![bag n tag 1](media/gifs/fishbowl.gif)
 ![bag n tag 2](media/gifs/grafitti_light.gif)
 ![bag n tag 3](media/gifs/space_needle.gif)
