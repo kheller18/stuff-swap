@@ -6,7 +6,7 @@
 
 ## Description
 
-We created a mock online marketplace for [NFT's (Non-Fungible Tokens)](https://en.wikipedia.org/wiki/Non-fungible_token). The site allows a user to register new NFT's and buy other users' NFT's. This project was created on the Ethereum blockchain and users ether for transactions, utitizing [MetaMask](https://metamask.io/download/) to facilitate transactions. One of our team members, Audell Sabeti, created an NFT collection that is available on the site. The website will allow users to browse and purchase NFTs from the collection using cryptocurrency, such as Ethereum, as a payment method. The UI was created using React.js framework. For data storage, we used [Pinata](https://www.pinata.cloud/), our smart contract was written in [Solidity](https://soliditylang.org/) and we used [Ganache](https://trufflesuite.com/ganache/) for our local blockchain configuration.
+We created a mock online marketplace for [NFT's (Non-Fungible Tokens)](https://en.wikipedia.org/wiki/Non-fungible_token). The site allows a user to register new NFT's and buy other users' NFT's. This project was created on the Ethereum blockchain and uses ether for transactions, utitizing [MetaMask](https://metamask.io/download/) to facilitate transactions. One of our team members, Audell Sabeti, created an NFT collection called `Bag N Tag` that is available on the site. The website will allow users to browse and purchase NFTs from the collection using cryptocurrency, such as Ethereum, as a payment method. The UI was created using React.js framework. For data storage, we used [Pinata](https://www.pinata.cloud/). Our smart contract was written in [Solidity](https://soliditylang.org/), deployed and tested using [Remix IDE](https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null). We used [Ganache](https://trufflesuite.com/ganache/) for our local blockchain configuration.
 
 When the user has installed all packages and setup the `.env` file or has navigated to the [deployed site](https://stuff-swap.herokuapp.com/), they should see our front page.
 ![main page on site](media/images/home.png)
@@ -20,16 +20,13 @@ As we can see, the user can choose different NFT's to view either from the top c
 
 For example, if the user wanted to register their art and clicked that link, they would be brought to the following screen:
 ![register art](media/images/register_artwork.png)
-If this this the first time the user has visited the site, [MetaMask](https://metamask.io/download/) will prompt the user asking for it to connect the site to the wallet.
+If this is the first time the user has visited the site, [MetaMask](https://metamask.io/download/) will prompt the user asking for it to connect the site to the wallet.
 ![connect to site](media/images/wallet_connected.png)
 
-Once the user is connected, fills out the form and clicks `Register Artwork`, [MetaMask](https://metamask.io/download/) will prompt the user to confirm the transaction. Once the transaction has been sent and the results verified, the user can naviage to their art through the `user` button in the header. They will see something like this:
+Once the user is connected, fills out the form and clicks `Register Artwork`, [MetaMask](https://metamask.io/download/) will prompt the user to confirm the transaction. Once the transaction has been sent and the results verified, the user can navigate to their art through the `user` button in the header. They will see something like this:
 ![my art](media/images/my_artwork.png)
 
-When the art has been uploaded and a price has been set, all other users on the site will be able to see their art and be able to purchase the art for the price set by the current owner.
-image here
-
-If a user an NFT on the site, they can click on it which will bring them to a page of the NFT and its details.
+When the art has been uploaded and a price has been set, all other users on the site will be able to see their art and be able to purchase the art for the price set by the current owner. If a user is interested in buying an NFT on the site, they can click on it which will bring them to a page of the NFT and its details.
 ![art](media/images/art.png)
 
 When the user clicks `Add to Cart`, the selected NFT will now be in their cart. The user can then click the cart icon in the header and it will bring them to a screen that looks like this:
@@ -66,25 +63,25 @@ Check out the skills from [Audell Sabeti](https://www.linkedin.com/in/audell-sab
 ## 1. Installation
 
   If you would like to clone the repository, type `git clone https://github.com/kheller18/stuff-swap.git`.
-  In the terminal, with the [Node.js](https://nodejs.org/en) installed, navigate to the root directory and type `npm install`. This will install all packages needed to run the web app that are specified in the two `package.json` files. Next, in the root directory of the `client` folder, create a new file named `.env`.
+  In the terminal, with [Node.js](https://nodejs.org/en) installed, navigate to the root directory and type `npm install`. This will install all packages needed to run the web app that are specified in the two `package.json` files. Next, in the root directory of the `client` folder, create a new file named `.env`.
 
   Next, we must ensure that `Pinata`, `Ganache`, `MetaMask`, `abi` and `.env` are correctly configured.
   + `Pinata`
-    + Create a Pinata account. Naviage to the page "API Keys". Keep those keys handy for configuration in the `.env` file.
+    + Create a [Pinata](https://www.pinata.cloud/) account. Naviage to the page "API Keys". Keep those keys handy for configuration in the `.env` file.
   + `Ganache`
-    + Open the Ganache desktop app and quickstart a new ethereum blockchain.
+    + Open the [Ganache](https://trufflesuite.com/ganache/) desktop app and quickstart a new ethereum blockchain.
   + `MetaMask`
-    + Using info Ganache, set up a development network by doing the following (if you haven't already)
+    + Using info `Ganache`, set up a development network by doing the following (if you haven't already)
       + Click "Add Network"
       + Click "Add a network manually"
-      + Add a name for you network
-      + Add the RPC URL (found in Ganache)
+      + Add a name for your network
+      + Add the RPC URL (found in `Ganache`)
       + Type "1337" for Chain ID
       + Type "ETH" for currency symbol
       + Click "Save"
-    + Now, import accounts from Ganache into MetaMask using private keys
-      + Copy private key from Ganache
-      + Click "Import Account" in MetaMask
+    + Now, import accounts from `Ganache` into `MetaMask` using private keys
+      + Copy private key from `Ganache`
+      + Click "Import Account" in `MetaMask`
       + Paste the private key
       + Click "Import"
   + `abi`
@@ -93,7 +90,7 @@ Check out the skills from [Audell Sabeti](https://www.linkedin.com/in/audell-sab
     + Once compiled, copy the abi file and navigate to the `client/src/contracts/compiled/stuffswapABI.json` file and paste the abi code into that file.
     + Navigate back to the [Remix IDE](https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null) and deploy the contract. Copy the deployment address and navigate to your `.env` file.
   + `.env`
-    + With your file open set up the following four variables
+    + With your file open set up the following four variables:
       + `REACT_APP_PINATA_API_KEY = '<Found in Pinata API Keys>'`
       + `REACT_APP_PINATA_API_SECRET = '<Found in Pinata API Keys>'`
       + `REACT_APP_WEB3_PROVIDER_URI = <URI found in Ganache>`
